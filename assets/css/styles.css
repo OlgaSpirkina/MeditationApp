@@ -11,4 +11,50 @@ nav ul li {
   margin: 0 2rem;
 }
 
+#checkboxes {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+fieldset legend {
+  font-size: 1rem;
+  width: 12rem;
+}
+fieldset span {
+  display: inline-block;
+  border: 1px solid red;
+  min-width: 10rem;
+}
+
+#videos {
+  width: 90%;
+  margin: auto;
+}
+
+.youtube {
+  width: 23rem;
+  margin: 0.5rem;
+}
+.youtube img {
+  width: 20rem;
+}
+.youtube #icon {
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+}
+.youtube .fa-youtube {
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+.youtube:hover {
+  color: red;
+}
+
 /*# sourceMappingURL=styles.css.map */
