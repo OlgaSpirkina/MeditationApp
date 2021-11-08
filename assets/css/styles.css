@@ -4,4 +4,11 @@ body {
   box-sizing: border-box;
 }
 
+nav {
+  background-color: grey;
+}
+nav ul li {
+  margin: 0 2rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -71,11 +71,11 @@ Tous deux sont maintenant instructeurs pour Mind, l'application de méditation."
       "description": "some description comes later"
     },
     {
-      "name": "",
-      "class": ["en", "andy", "tedTalk", "medium", "dailyLife"],
-      "link": "",
-      "duration": ,
-      "description": ""
+      "name": "Pleine conscience de la douceur et du bonheur par Christophe André",
+      "class": ["fr", "andre", "meditation", "medium", "happiness"],
+      "link": "wKu2Fi4l4Sk",
+      "duration": 15.23,
+      "description": "some description comes later"
     }
   ]
 }
