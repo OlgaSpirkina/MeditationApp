@@ -17,6 +17,9 @@
   <title>Meditation</title>
 </head>
 <body>
+  <div class="loader">
+    <img src="./assets/img/spinner.gif" alt="loading..."/>
+  </div>
   <nav class="container-fluid">
     <div class="row">
       <div class="col-12 my-4 d-flex justify-content-start align-items-center">
@@ -53,6 +56,7 @@
         <iframe
           id="modalPlayer"
           src=""
+          title=""
           allow="autoplay"
         >
         <!--
@@ -64,14 +68,13 @@
         </iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <p id="youtubeModalDescription"></p>
       </div>
     </div>
   </div>
 </div>
-
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 </html>

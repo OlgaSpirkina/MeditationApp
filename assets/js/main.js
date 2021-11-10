@@ -1,3 +1,8 @@
+// Loading
+window.addEventListener("load", function(){
+  const loader = document.querySelector(".loader");
+  loader.className += " hidden";
+})
 // Variables
 let checkboxArr = [];
 const language = document.getElementById('language'),
@@ -45,7 +50,7 @@ const displayVideos = (anyArray) => {
           class="fab fa-5x fa-youtube"
           data-bs-toggle="modal"
           data-bs-target="#youtubeModal"
-          onclick="displayModal('${video.link}')"
+          onclick="displayModal('${video.link}', '${video.name}', '${video.description}')"
         >
         </i>
         <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
@@ -55,8 +60,11 @@ const displayVideos = (anyArray) => {
     return html;
   }).join();
 }
-const displayModal = (link) => {
-  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`
+const displayModal = (link, name, description) => {
+  document.getElementById('youtubeModalLabel').innerHTML = name;
+  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
+  document.getElementById('modalPlayer').title = name;
+  document.getElementById('youtubeModalDescription').innerHTML = description;
 }
 // Fetching data
 async function fetchVideos(){
