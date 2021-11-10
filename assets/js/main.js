@@ -26,7 +26,6 @@ const typeOfContentFilter = (wrapper, someData, index, allSmth, heading) => {
     `;
     return html
   }).join('');
-  console.log(checkboxArr);
   checkboxArr = [];
 }
 // Display Videos
@@ -42,13 +41,22 @@ const displayVideos = (anyArray) => {
         class="d-flex justify-content-center align-items-center ${classes}"
       >
         <div id="icon"></div>
-        <i class="fab fa-5x fa-youtube"></i>
+        <i
+          class="fab fa-5x fa-youtube"
+          data-bs-toggle="modal"
+          data-bs-target="#youtubeModal"
+          onclick="displayModal('${video.link}')"
+        >
+        </i>
         <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
       </div>
     `;
 
     return html;
   }).join();
+}
+const displayModal = (link) => {
+  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`
 }
 // Fetching data
 async function fetchVideos(){
