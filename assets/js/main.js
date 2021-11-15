@@ -3,6 +3,7 @@ window.addEventListener("load", function(){
   const loader = document.querySelector(".loader");
   loader.className += " hidden";
 });
+
 // Variables
 let checkboxArr = [];
 const language = document.getElementById('language'),
@@ -33,6 +34,12 @@ const typeOfContentFilter = (wrapper, someData, index, allSmth, heading) => {
   }).join('');
   checkboxArr = [];
 }
+const displayModal = (link, name, description) => {
+  document.getElementById('youtubeModalLabel').innerHTML = name;
+  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
+  document.getElementById('modalPlayer').title = name;
+  document.getElementById('youtubeModalDescription').innerHTML = description;
+}
 // Display Videos
 let classes;
 const displayVideos = (anyArray) => {
@@ -59,12 +66,6 @@ const displayVideos = (anyArray) => {
 
     return html;
   }).join();
-}
-const displayModal = (link, name, description) => {
-  document.getElementById('youtubeModalLabel').innerHTML = name;
-  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
-  document.getElementById('modalPlayer').title = name;
-  document.getElementById('youtubeModalDescription').innerHTML = description;
 }
 // Fetching data
 async function fetchVideos(){
