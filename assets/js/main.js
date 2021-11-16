@@ -26,22 +26,22 @@ const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, he
   checkboxArr = checkboxArr.filter(function(m, index){
     return checkboxArr.indexOf(m) === index;
   }).sort();
-  wrapper.innerHTML = `<legend>choose by ${heading}</legend>` +
+  wrapper.innerHTML = `<legend>${heading}</legend>` +
   checkboxArr.map(function(title){
     (title === allSmth)
       ?
       (html =
       `
-        <span>
-            <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" checked></input>
-            <label id="${allSmthClass}Label" for="${title}">Select ${title}</label>
+        <span class="d-flex justify-content-start align-items-center ${allSmthClass}">
+            <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
+            <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
         </span>
       `)
       :
       (html =
       `
-        <span>
-            <input type="checkbox" id="${title}" name="${title}" rel="${title}" checked></input>
+        <span class="d-flex justify-content-start align-items-center">
+            <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
             <label for="${title}">${title}</label>
         </span>
       `);

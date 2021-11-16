@@ -55,6 +55,32 @@ setTimeout(function(){
 // addEventListener to all checkboxes
   for(let i=0; i<allCheckboxes.length; i++){
     allCheckboxes[i].addEventListener('change', function(){
+      if(allCheckboxes[i].checked){
+        hiddenDiv.style.display = "none";
+        hiddenText.style.visibility = "hidden";
+      }
+//A case when All Smth checkbox checked or unchecked
+    const allCheckedOrUnchecked = (name, label, textWhenTrue, textWhenFalse, theArray, videosDisabled) => {
+      if((allCheckboxes[i].checked)&&(allCheckboxes[i].name === name)){
+        label.innerHTML = textWhenTrue;
+        theArray.forEach(elem =>{
+          elem.checked = true;
+        })
+      }
+      if((allCheckboxes[i].checked === false)&&(allCheckboxes[i].name === name)){
+        label.innerHTML = textWhenFalse;
+        theArray.forEach(elem =>{
+          elem.checked = false;
+        })
+        disableAllVideos(videosDisabled)
+      }
+    }
+      allCheckedOrUnchecked("All Languages", allLangLabel, "Unselect All Languages", "Select All Languages", allLanguages, "one Language");
+      allCheckedOrUnchecked("All Authors", allAuthLabel, "Unselect All Authors", "Select All Authors", allAuthors, "one Author");
+      allCheckedOrUnchecked("All Categories", allCatLabel, "Unselect All Categories", "Select All Categories", allContents, "one Category");
+      allCheckedOrUnchecked("Any duration", anyDurLabel, "Unselect Any Duration", "Select Any Duration", allDurations, "one Duration Parameter");
+      allCheckedOrUnchecked("All Topics", allTopLabel, "Unselect All Topics", "Select All Topics", allTopics, "one Topic");
+// End All Smth Checked/Unchecked
       let filtersChecked = {
         theLanguage: getClassOfCheckboxes(allLanguages),
         theAuthor: getClassOfCheckboxes(allAuthors),
@@ -86,4 +112,14 @@ const filterWhenChecked = (theArray, filters) => {
   for(let i=0; i<hiddenElems.length; i++){
     hiddenElems[i].classList.remove('show');
   }
+}
+// Videos aren't clickable when No category selected
+const disableAllVideos = (word) => {
+
+// Div and Text where a message appears when no category selected
+const hiddenDiv = document.getElementById('hiddenDiv');
+const hiddenText = document.getElementById('hiddenText');
+  hiddenDiv.style.display = "block";
+  hiddenText.style.visibility = "visible";
+  hiddenText.innerHTML = `Choose at least ${word}`;
 }
