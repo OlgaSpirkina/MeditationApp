@@ -11,14 +11,49 @@ window.onload = async () => {
 // Variables
 let checkboxArr = [],
     html;
+// Create Form & Fieldset for small screen size  
+// create Language Form
+const languageForm = document.createElement('form');
+const languageFieldset = document.createElement('fieldset');
+languageFieldset.setAttribute('id', 'language');
+languageForm.appendChild(languageFieldset);
+// create Author Form
+const authorForm = document.createElement('form');
+const authorFieldset = document.createElement('fieldset');
+authorFieldset.setAttribute('id', 'author');
+authorForm.appendChild(authorFieldset);
+// create Content Form
+const contentForm = document.createElement('form');
+const contentFieldset = document.createElement('fieldset');
+contentFieldset.setAttribute('id', 'type-of-content');
+contentForm.appendChild(contentFieldset);
+// create Duration Form
+const durationForm = document.createElement('form');
+const durationFieldset = document.createElement('fieldset');
+durationFieldset.setAttribute('id', 'duration');
+durationForm.appendChild(durationFieldset);
+// create Topic Form
+const topicForm = document.createElement('form');
+const topicFieldset = document.createElement('fieldset');
+topicFieldset.setAttribute('id', 'topic');
+topicForm.appendChild(topicFieldset);
+const formParent = document.getElementById('formParent');
+formParent.appendChild(languageForm);
+formParent.appendChild(authorForm);
+formParent.appendChild(contentForm);
+formParent.appendChild(durationForm);
+formParent.appendChild(topicForm);
+// Variables
 const language = document.getElementById('language'),
-      autor = document.getElementById('author'),
+      author = document.getElementById('author'),
       typeOfContent = document.getElementById('type-of-content'),
       duration = document.getElementById('duration'),
       topic = document.getElementById('topic'),
       videos = document.getElementById('videos');
-// Create Checkbox filters
+// Create Checkbox filters if large screen
 const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, heading) => {
+  const mql = window.matchMedia('(max-width: 800px)');
+  let mobileView = mql.matches;
   someData.forEach(elem => {
     checkboxArr.push(elem.classes[index])
   })
@@ -26,28 +61,32 @@ const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, he
   checkboxArr = checkboxArr.filter(function(m, index){
     return checkboxArr.indexOf(m) === index;
   }).sort();
-  wrapper.innerHTML = `<legend>${heading}</legend>` +
-  checkboxArr.map(function(title){
-    (title === allSmth)
-      ?
-      (html =
-      `
-        <span class="d-flex justify-content-start align-items-center ${allSmthClass}">
-            <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
-            <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
-        </span>
-      `)
-      :
-      (html =
-      `
-        <span class="d-flex justify-content-start align-items-center">
-            <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
-            <label for="${title}">${title}</label>
-        </span>
-      `);
-    return html;
-  })
-  .join('');
+  if (mobileView) {
+    //setNavInnerHTML(Component1);
+  } else {
+    wrapper.innerHTML = `<legend>${heading}</legend>` +
+    checkboxArr.map(function(title){
+      (title === allSmth)
+        ?
+        (html =
+        `
+          <span class="d-flex justify-content-start align-items-center ${allSmthClass}">
+              <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
+              <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
+          </span>
+        `)
+        :
+        (html =
+        `
+          <span class="d-flex justify-content-start align-items-center">
+              <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
+              <label for="${title}">${title}</label>
+          </span>
+        `);
+      return html;
+    })
+    .join('');
+  }
   checkboxArr = [];
 }
 const displayModal = (link, name, description) => {

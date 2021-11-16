@@ -17,6 +17,12 @@ nav ul li {
   color: #dd8300;
 }
 
+#language, #author, #type-of-content, #duration, #topic {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 fieldset {
   color: #fff;
   padding: 0.5rem 0;
@@ -29,12 +35,15 @@ fieldset span {
   display: inline-block;
   min-width: 8rem;
 }
+fieldset span input, fieldset span label {
+  cursor: pointer;
+}
 fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fieldset .allTop {
   width: 13rem;
 }
 
 #videos {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -123,5 +132,32 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 /* End HiddenDiv & HiddenText */
+@media all and (max-width: 535px) {
+  .youtube {
+    width: 20rem;
+  }
+  .youtube img {
+    width: 20rem;
+  }
+}
+@media all and (min-width: 536px) and (max-width: 800px) {
+  .youtube {
+    width: 15rem;
+  }
+  .youtube img {
+    width: 15rem;
+  }
+}
+@media all and (max-width: 800px) {
+  #formParent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #hiddenText {
+    font-size: 1rem;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -14,6 +14,11 @@ nav{
 #checkboxes p{
   color: #dd8300;
 }
+#language,#author,#type-of-content,#duration,#topic{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
 fieldset{
   color: #fff;
   padding: .5rem 0;
@@ -24,13 +29,16 @@ fieldset{
   span{
     display: inline-block;
     min-width: 8rem;
+    input, label{
+      cursor: pointer;
+    }
   }
   .allLang, .allCat, .allAuth, .anyDur, .allTop{
     width: 13rem;
   }
 }
 #videos{
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 .youtube{
@@ -112,3 +120,29 @@ fieldset{
   z-index: 1000;
 }
 /* End HiddenDiv & HiddenText */
+@media all and (max-width: 535px){
+  .youtube{
+    width: 20rem;
+    img{
+      width: 20rem;
+    }
+  }
+}
+@media all and (min-width: 536px) and (max-width: 800px){
+  .youtube{
+    width: 15rem;
+    img{
+      width: 15rem;
+    }
+  }
+}
+@media all and (max-width: 800px){
+  #formParent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #hiddenText{
+    font-size: 1rem;
+  }
+}

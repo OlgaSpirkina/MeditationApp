@@ -5,10 +5,10 @@ input[type="checkbox"] {
   margin: 0;
   font: inherit;
   color: red;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border: 0.1rem solid #fff;
-  border-radius: 0.15rem;
+  border-radius: 0.2rem;
   transform: translateY(-0.075rem);
   display: grid;
   place-content: center;
@@ -16,8 +16,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
   content: "";
-  width: 1rem;
-  height: 1rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 0.15rem;
   transform: scale(0);
   transition: 150ms transform ease-in-out;
