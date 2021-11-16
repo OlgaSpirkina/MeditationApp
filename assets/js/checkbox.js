@@ -10,8 +10,23 @@ const getClassOfCheckboxes = (checkboxes) => {
   }
   return classOfCheckb;
 }
-// Wait untill everything is loaded
+// This function will be used inside filterWhenChecked function to filter each category
+const filterByCategory = (category, el, hiddenElems) => {
+  if(category.length > 0){
+    let isHidden = true;
+    for(let j=0; j<category.length; j++){
+      let filter = category[j];
+      if(el.classList.contains(filter)){
+        isHidden = false;
+        break;
+      }
+    }
+    if(isHidden){hiddenElems.push(el);}
+  }
+}
+// Wait untill everything is loaded because all checkboxes are created in main.js file
 setTimeout(function(){
+// Variables
   const videosContainer = document.getElementById('videos'),
   // Checkboxes
       allCheckboxes = document.querySelectorAll('input[type="checkbox"]'),
@@ -33,14 +48,13 @@ setTimeout(function(){
       anyDurLabel = document.getElementById('anyDurLabel'),
       allTopLabel = document.getElementById('allTopLabel');
   let videoList = document.querySelectorAll('.youtube');
-// display all the videos by default
+// display all the videos hidden by default
   for(let i=0; i<videoList.length; i++){
     videoList[i].classList.add('show');
   }
 // addEventListener to all checkboxes
   for(let i=0; i<allCheckboxes.length; i++){
     allCheckboxes[i].addEventListener('change', function(){
-      console.log("coucou")
       let filtersChecked = {
         theLanguage: getClassOfCheckboxes(allLanguages),
         theAuthor: getClassOfCheckboxes(allAuthors),
@@ -48,31 +62,23 @@ setTimeout(function(){
         theDuration: getClassOfCheckboxes(allDurations),
         theTopic: getClassOfCheckboxes(allTopics),
       };
-      filterWhenChecked(filtersChecked, videoList);
+      filterWhenChecked(videoList, filtersChecked);
     })
   }
 },500);
 // Filter based on rel attribute of checkboxes & class of videos
-const filterWhenChecked = (filters, theArray) => {
-  console.log("coucou")
+const filterWhenChecked = (theArray, filters) => {
+  console.log(filters)
   let hiddenElems = [];
   if(!theArray || theArray.length <= 0) return;
   for(let i=0; i<theArray.length; i++){
     let el = theArray[i];
-  //Authors
-    if(filters.theAuthor.length > 0){
-      isHidden = true;
-      for(let j=0; j<filters.theAuthor.length; j++){
-        let filter = filters.theAuthor[j];
-        if(el.classList.contains(filter)){
-          isHidden = false;
-          break;
-        }
-      }
-      if(isHidden){hiddenElems.push(el);}
-    }
+    filterByCategory(filters.theAuthor, el, hiddenElems);
+    filterByCategory(filters.theLanguage, el, hiddenElems);
+    filterByCategory(filters.theContent, el, hiddenElems);
+    filterByCategory(filters.theDuration, el, hiddenElems);
+    filterByCategory(filters.theTopic, el, hiddenElems);
   }
-  // End Authors
   for(let i=0; i<theArray.length; i++){
     theArray[i].classList.add('show');
   }
