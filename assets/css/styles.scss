@@ -29,10 +29,11 @@ fieldset{
   margin: auto;
 }
 .youtube{
+  display: none;
   width: 23rem;
   margin: .5rem;
   img{
-    width: 20rem;
+    width: 23rem;
   }
   #icon{
     z-index: 1;
@@ -45,6 +46,7 @@ fieldset{
   }
   .fa-youtube{
     z-index: 2;
+    cursor: pointer;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -70,7 +72,7 @@ fieldset{
   }
 }
 .hidden{
-  animation: fadeOut .5s;
+  animation: fadeOut 1s;
   animation-fill-mode: forwards;
 }
 @keyframes fadeOut{
@@ -80,3 +82,6 @@ fieldset{
   }
 }
 /* end loading gif */
+.show{
+  display: block;
+}

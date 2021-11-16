@@ -32,11 +32,12 @@ fieldset span {
 }
 
 .youtube {
+  display: none;
   width: 23rem;
   margin: 0.5rem;
 }
 .youtube img {
-  width: 20rem;
+  width: 23rem;
 }
 .youtube #icon {
   z-index: 1;
@@ -49,6 +50,7 @@ fieldset span {
 }
 .youtube .fa-youtube {
   z-index: 2;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -75,7 +77,7 @@ fieldset span {
 }
 
 .hidden {
-  animation: fadeOut 0.5s;
+  animation: fadeOut 1s;
   animation-fill-mode: forwards;
 }
 
@@ -86,5 +88,8 @@ fieldset span {
   }
 }
 /* end loading gif */
+.show {
+  display: block;
+}
 
 /*# sourceMappingURL=styles.css.map */
