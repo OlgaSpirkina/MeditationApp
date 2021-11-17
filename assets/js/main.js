@@ -11,45 +11,57 @@ window.onload = async () => {
 // Variables
 let checkboxArr = [],
     html;
-// Create Form & Fieldset for small screen size  
-// create Language Form
-const languageForm = document.createElement('form');
-const languageFieldset = document.createElement('fieldset');
-languageFieldset.setAttribute('id', 'language');
-languageForm.appendChild(languageFieldset);
-// create Author Form
-const authorForm = document.createElement('form');
-const authorFieldset = document.createElement('fieldset');
-authorFieldset.setAttribute('id', 'author');
-authorForm.appendChild(authorFieldset);
-// create Content Form
-const contentForm = document.createElement('form');
-const contentFieldset = document.createElement('fieldset');
-contentFieldset.setAttribute('id', 'type-of-content');
-contentForm.appendChild(contentFieldset);
-// create Duration Form
-const durationForm = document.createElement('form');
-const durationFieldset = document.createElement('fieldset');
-durationFieldset.setAttribute('id', 'duration');
-durationForm.appendChild(durationFieldset);
-// create Topic Form
-const topicForm = document.createElement('form');
-const topicFieldset = document.createElement('fieldset');
-topicFieldset.setAttribute('id', 'topic');
-topicForm.appendChild(topicFieldset);
-const formParent = document.getElementById('formParent');
-formParent.appendChild(languageForm);
-formParent.appendChild(authorForm);
-formParent.appendChild(contentForm);
-formParent.appendChild(durationForm);
-formParent.appendChild(topicForm);
-// Variables
+// Create Form & Fieldset for small screen size
+const createFormFieldset = (idParam) => {
+  const formParent = document.getElementById('formParent');
+  console.log(idParam)
+  const myForm = document.createElement('form');
+  const myFieldset = document.createElement('fieldset');
+      myFieldset.setAttribute('id', idParam);
+  myForm.appendChild(myFieldset);
+  formParent.appendChild(myForm);
+  return formParent;
+}
+const languageForm = createFormFieldset('language');
+const authorForm = createFormFieldset('author');
+const contentForm = createFormFieldset('type-of-content');
+const durationForm = createFormFieldset('duration');
+const topicForm = createFormFieldset('topic');
+// Variables for forms & checkboxes
 const language = document.getElementById('language'),
       author = document.getElementById('author'),
       typeOfContent = document.getElementById('type-of-content'),
       duration = document.getElementById('duration'),
       topic = document.getElementById('topic'),
       videos = document.getElementById('videos');
+//
+//Carousel parent to display videos when small screen
+//
+const carouselPanorama = document.createElement('div');
+      carouselPanorama.setAttribute('class', 'carousel_panorama');
+// Carousel of videos when small screen
+class Carousel {
+  /*
+  * @param (HTMLElement) element
+  * @param (Object) options
+  * @param (Object) options.slideToScroll Number of slides
+  * @param (Object) options.slideVisible Number of vidios visible
+  */
+  constructor(element, options={}){
+    this.element = element,
+    this.options = Object.assign({}, {
+      slideToScroll: 1,
+      slideVisible: 1
+    }, options)
+
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  new Carousel(document.querySelector('#videos'), {
+    slideToScroll: 3,
+    slideVisible: 3
+  })
+})
 // Create Checkbox filters if large screen
 const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, heading) => {
   const mql = window.matchMedia('(max-width: 800px)');
@@ -98,29 +110,39 @@ const displayModal = (link, name, description) => {
 // Display Videos
 let classes;
 const displayVideos = (anyArray) => {
-  videos.innerHTML =
-  anyArray.map(function(video){
-    classes = "youtube col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3 ";
-    video.classes.forEach(item => { classes += ` ${item} ` })
-    let html =
-    `
-      <div
-        class="${classes}"
-      >
-        <div class="d-flex justify-content-center align-items-center ">
-          <div id="icon"></div>
-          <i
-            class="fab fa-5x fa-youtube"
-            data-bs-toggle="modal"
-            data-bs-target="#youtubeModal"
-            onclick="displayModal('${video.link}', '${video.name}', '${video.description}')"
-          >
-          </i>
-          <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
-        </div>
-      </div>`;
-    return html;
-  }).join('');
+  let html;
+  // mobile view
+  const mqlVideos = window.matchMedia('(max-width: 800px)');
+  let mobileViewVideos = mqlVideos.matches;
+    videos.innerHTML =
+    anyArray.map(function(video){
+      classes = "youtube col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3 ";
+      video.classes.forEach(item => { classes += ` ${item} ` })
+      if (mobileViewVideos) {
+        videos.appendChild(carouselPanorama);
+      } else {
+      html =
+      `
+        <div
+          class="${classes}"
+        >
+          <div class="d-flex justify-content-center align-items-center ">
+            <div id="icon"></div>
+            <i
+              class="fab fa-5x fa-youtube"
+              data-bs-toggle="modal"
+              data-bs-target="#youtubeModal"
+              onclick="displayModal('${video.link}', '${video.name}', '${video.description}')"
+            >
+            </i>
+            <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
+          </div>
+        </div>`;
+
+      return html;
+    }
+    }).join('');
+
 }
 
 // Fetching data
