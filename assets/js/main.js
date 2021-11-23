@@ -31,7 +31,8 @@ const languageForm = createFormFieldset('language'),
       duration = document.getElementById('duration'),
       topic = document.getElementById('topic'),
       videos = document.getElementById('videos');
-// Create Checkbox filters if large screen
+
+// Create Checkbox filters different in large or small screen
 const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
   const mql = window.matchMedia('(max-width: 800px)');
   let mobileView = mql.matches;
@@ -43,10 +44,36 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
     return checkboxArr.indexOf(m) === index;
   }).sort();
   if(mobileView){
+    console.log(checkboxArr);
+    wrapper.innerHTML +=
+    `
+      <legend
+        data-bs-toggle="modal"
+        data-bs-target="#checkboxModal"
+        onclick="displayCheckboxModal(['All Languages', 'en', 'fr'], '${allSmthClass}', '${allSmth}', '${checkboxArr}')"
+        class="btn mobileLegend ${commonClass}"
+      >
+        ${heading}
+      </legend>
+    `
+    /*
+    `
+    <legend
+      class="btn mobileLegend ${commonClass}"
+      data-bs-toggle="modal"
+      data-bs-target="#checkboxModal"
+      onclick="displayCheckboxModal('${checkboxArr}', '${allSmthClass}', '${title}', ${allSmth})"
+    >
+      ${heading}
+    </legend>`
+    */
+/*
     const mobileCheckbParent = document.createElement('div'),
           legend = document.createElement('legend');
     mobileCheckbParent.setAttribute('class', `mobileCheckbParent ${commonClass}`);
     legend.setAttribute('class', `btn mobileLegend ${commonClass}`);
+    legend.setAttribute("data-toggle", "modal");
+    legend.setAttribute("data-target", "#checkboxModal");
     legend.innerHTML = heading;
     wrapper.appendChild(legend);
     wrapper.appendChild(mobileCheckbParent);
@@ -72,6 +99,7 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
       return html;
     })
     .join('');
+*/
   }
   else {
     wrapper.innerHTML = `<legend>${heading}</legend>` +
@@ -98,6 +126,7 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
     .join('');
   }
   checkboxArr = [];
+  /*
   const legends = document.querySelectorAll('.mobileLegend'),
         hiddenChecks = document.querySelectorAll('.mobileCheckbParent');
   legends.forEach((legend) => {
@@ -105,12 +134,44 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
       if(legend.classList.contains(commonClass)){
         for(let i=0; i<hiddenChecks.length; i++){
           if(hiddenChecks[i].classList.contains(commonClass)){
-            hiddenChecks[i].classList.toggle('show');
+
+            //hiddenChecks[i].classList.toggle('show');
           }
         }
       }
     });
   })
+  */
+}
+// Checkbox modal
+const displayCheckboxModal = (checkboxA, allSmthClass, allSmth, lastParam) => {
+
+  wordArray = lastParam.split(',');
+
+  console.log(wordArray);
+  let html;
+  document.getElementById('checkboxModalBody').innerHTML =
+  wordArray.map(function(title){
+    (title === allSmth)
+      ?
+      (html =
+      `
+        <span class="theCheckboxes ${allSmthClass}">
+            <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
+            <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
+        </span>
+      `)
+      :
+      (html =
+      `
+        <span class="theCheckboxes">
+            <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
+            <label for="${title}">${title}</label>
+        </span>
+      `);
+    return html;
+  })
+  .join('');
 }
 // Display Videos
 let classes;
@@ -145,11 +206,6 @@ const displayModal = (link, name, description) => {
   document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
   document.getElementById('modalPlayer').title = name;
   document.getElementById('youtubeModalDescription').innerHTML = description;
-}
-const createElement = (className) =>{
-  let div = document.createElement('div');
-  div.setAttribute('class', className);
-  return div;
 }
 // Fetching data
 async function fetchVideos(){

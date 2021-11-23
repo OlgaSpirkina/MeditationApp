@@ -127,7 +127,9 @@ fieldset{
 .commonAuthors,
 .commonDuration,
 .commonTopics{
+  /*
   display: none;
+  */
 }
 .mobileLegend{
   display: block;
@@ -137,7 +139,9 @@ fieldset{
   width: 10rem;
 }
 .mobileCheckbParent{
+  /*
   display: none;
+  */
   z-index: 2;
   background-color: #333;
 }

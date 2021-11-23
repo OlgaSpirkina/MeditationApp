@@ -137,7 +137,9 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 .commonAuthors,
 .commonDuration,
 .commonTopics {
+  /*
   display: none;
+  */
 }
 
 .mobileLegend {
@@ -149,7 +151,9 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 .mobileCheckbParent {
+  /*
   display: none;
+  */
   z-index: 2;
   background-color: #333;
 }
