@@ -132,6 +132,33 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 /* End HiddenDiv & HiddenText */
+.commonCategories,
+.commonLanguages,
+.commonAuthors,
+.commonDuration,
+.commonTopics {
+  display: none;
+}
+
+.mobileLegend {
+  display: block;
+  background-color: red;
+  padding: 0.5rem;
+  color: #fff;
+  width: 10rem;
+}
+
+.mobileCheckbParent {
+  display: none;
+  z-index: 2;
+  background-color: #333;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
 @media all and (max-width: 535px) {
   .youtube {
     width: 20rem;
@@ -147,12 +174,21 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   .youtube img {
     width: 15rem;
   }
+
+  #videos {
+    padding: 0;
+    margin: 0;
+  }
 }
 @media all and (max-width: 800px) {
   #formParent {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
   #hiddenText {

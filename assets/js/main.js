@@ -6,64 +6,33 @@ window.onload = async () => {
     setTimeout(function(){
       loader.classList.add("hidden");
     },1010)
-  }
-};
-// Variables
-let checkboxArr = [],
-    html;
-// Create Form & Fieldset for small screen size
+  };
+}
+let checkboxArr = [];
+// Create Form & Fieldset for small or large screen size
 const createFormFieldset = (idParam) => {
-  const formParent = document.getElementById('formParent');
-  console.log(idParam)
-  const myForm = document.createElement('form');
-  const myFieldset = document.createElement('fieldset');
-      myFieldset.setAttribute('id', idParam);
+  const formParent = document.getElementById('formParent'),
+        myForm = document.createElement('form'),
+        myFieldset = document.createElement('fieldset');
+  myFieldset.setAttribute('id', idParam);
   myForm.appendChild(myFieldset);
   formParent.appendChild(myForm);
   return formParent;
 }
-const languageForm = createFormFieldset('language');
-const authorForm = createFormFieldset('author');
-const contentForm = createFormFieldset('type-of-content');
-const durationForm = createFormFieldset('duration');
-const topicForm = createFormFieldset('topic');
+const languageForm = createFormFieldset('language'),
+      authorForm = createFormFieldset('author'),
+      contentForm = createFormFieldset('type-of-content'),
+      durationForm = createFormFieldset('duration'),
+      topicForm = createFormFieldset('topic'),
 // Variables for forms & checkboxes
-const language = document.getElementById('language'),
+      language = document.getElementById('language'),
       author = document.getElementById('author'),
       typeOfContent = document.getElementById('type-of-content'),
       duration = document.getElementById('duration'),
       topic = document.getElementById('topic'),
       videos = document.getElementById('videos');
-//
-//Carousel parent to display videos when small screen
-//
-const carouselPanorama = document.createElement('div');
-      carouselPanorama.setAttribute('class', 'carousel_panorama');
-// Carousel of videos when small screen
-class Carousel {
-  /*
-  * @param (HTMLElement) element
-  * @param (Object) options
-  * @param (Object) options.slideToScroll Number of slides
-  * @param (Object) options.slideVisible Number of vidios visible
-  */
-  constructor(element, options={}){
-    this.element = element,
-    this.options = Object.assign({}, {
-      slideToScroll: 1,
-      slideVisible: 1
-    }, options)
-
-  }
-}
-document.addEventListener('DOMContentLoaded', function(){
-  new Carousel(document.querySelector('#videos'), {
-    slideToScroll: 3,
-    slideVisible: 3
-  })
-})
 // Create Checkbox filters if large screen
-const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, heading) => {
+const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
   const mql = window.matchMedia('(max-width: 800px)');
   let mobileView = mql.matches;
   someData.forEach(elem => {
@@ -73,9 +42,38 @@ const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, he
   checkboxArr = checkboxArr.filter(function(m, index){
     return checkboxArr.indexOf(m) === index;
   }).sort();
-  if (mobileView) {
-    //setNavInnerHTML(Component1);
-  } else {
+  if(mobileView){
+    const mobileCheckbParent = document.createElement('div'),
+          legend = document.createElement('legend');
+    mobileCheckbParent.setAttribute('class', `mobileCheckbParent ${commonClass}`);
+    legend.setAttribute('class', `btn mobileLegend ${commonClass}`);
+    legend.innerHTML = heading;
+    wrapper.appendChild(legend);
+    wrapper.appendChild(mobileCheckbParent);
+    mobileCheckbParent.innerHTML =
+    checkboxArr.map(function(title){
+      (title === allSmth)
+        ?
+        (html =
+        `
+          <span class="theCheckboxes ${allSmthClass}">
+              <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
+              <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
+          </span>
+        `)
+        :
+        (html =
+        `
+          <span class="theCheckboxes">
+              <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
+              <label for="${title}">${title}</label>
+          </span>
+        `);
+      return html;
+    })
+    .join('');
+  }
+  else {
     wrapper.innerHTML = `<legend>${heading}</legend>` +
     checkboxArr.map(function(title){
       (title === allSmth)
@@ -100,27 +98,28 @@ const typeOfContentFilter = (wrapper, someData, index, allSmth, allSmthClass, he
     .join('');
   }
   checkboxArr = [];
-}
-const displayModal = (link, name, description) => {
-  document.getElementById('youtubeModalLabel').innerHTML = name;
-  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
-  document.getElementById('modalPlayer').title = name;
-  document.getElementById('youtubeModalDescription').innerHTML = description;
+  const legends = document.querySelectorAll('.mobileLegend'),
+        hiddenChecks = document.querySelectorAll('.mobileCheckbParent');
+  legends.forEach((legend) => {
+    legend.addEventListener('click', function(){
+      if(legend.classList.contains(commonClass)){
+        for(let i=0; i<hiddenChecks.length; i++){
+          if(hiddenChecks[i].classList.contains(commonClass)){
+            hiddenChecks[i].classList.toggle('show');
+          }
+        }
+      }
+    });
+  })
 }
 // Display Videos
 let classes;
-const displayVideos = (anyArray) => {
+const displayVideos = (anyArray, wrapper) => {
   let html;
-  // mobile view
-  const mqlVideos = window.matchMedia('(max-width: 800px)');
-  let mobileViewVideos = mqlVideos.matches;
-    videos.innerHTML =
+    wrapper.innerHTML =
     anyArray.map(function(video){
       classes = "youtube col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3 ";
       video.classes.forEach(item => { classes += ` ${item} ` })
-      if (mobileViewVideos) {
-        videos.appendChild(carouselPanorama);
-      } else {
       html =
       `
         <div
@@ -138,13 +137,15 @@ const displayVideos = (anyArray) => {
             <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
           </div>
         </div>`;
-
       return html;
-    }
     }).join('');
 
 }
-
+const createElement = (className) =>{
+  let div = document.createElement('div');
+  div.setAttribute('class', className);
+  return div;
+}
 // Fetching data
 async function fetchVideos(){
   const res = await fetch('https://my-json-server.typicode.com/OlgaSpirkina/MeditationApp/videos');
@@ -153,12 +154,12 @@ async function fetchVideos(){
     throw new Error(message);
   }
   const data = await res.json();
-  displayVideos(data);
-  typeOfContentFilter(typeOfContent, data, 2, "All Categories", "allCat", "type of content");
-  typeOfContentFilter(language, data, 0, "All Languages", "allLang", "language");
-  typeOfContentFilter(author, data, 1, "All Authors", "allAuth", "author");
-  typeOfContentFilter(duration, data, 3, "Any duration", "anyDur", "duration");
-  typeOfContentFilter(topic, data, 4, "All Topics", "allTop", "topic");
+  displayVideos(data, videos);
+  typeOfContentFilter(typeOfContent, data, "commonCategories", 2, "All Categories", "allCat", "type of content");
+  typeOfContentFilter(language, data, "commonLanguages", 0, "All Languages", "allLang", "language");
+  typeOfContentFilter(author, data, "commonAuthors", 1, "All Authors", "allAuth", "author");
+  typeOfContentFilter(duration, data, "commonDuration", 3, "Any duration", "anyDur", "duration");
+  typeOfContentFilter(topic, data, "commonTopics", 4, "All Topics", "allTop", "topic");
   return data;
 }
 fetchVideos().catch(error => {
