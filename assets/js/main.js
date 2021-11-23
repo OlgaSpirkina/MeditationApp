@@ -139,7 +139,12 @@ const displayVideos = (anyArray, wrapper) => {
         </div>`;
       return html;
     }).join('');
-
+}
+const displayModal = (link, name, description) => {
+  document.getElementById('youtubeModalLabel').innerHTML = name;
+  document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
+  document.getElementById('modalPlayer').title = name;
+  document.getElementById('youtubeModalDescription').innerHTML = description;
 }
 const createElement = (className) =>{
   let div = document.createElement('div');
