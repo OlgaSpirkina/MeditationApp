@@ -80,6 +80,10 @@ body {
 
 /* End Navbar */
 /* Checkbox Filter */
+a #upArrow {
+  display: none;
+}
+
 #checkboxes p {
   color: #CF0034;
 }
@@ -110,6 +114,13 @@ fieldset span input, fieldset span label {
 }
 fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fieldset .allTop {
   width: 13rem;
+}
+
+#upArrow {
+  color: #CF0034;
+  position: relative;
+  float: right;
+  margin-bottom: 0.5rem;
 }
 
 /* End Checkbox Filter */
@@ -238,6 +249,13 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   }
 }
 @media all and (max-width: 800px) {
+  #wrapperFormParent {
+    width: 95%;
+    margin: 0.5rem auto;
+    background-color: rgba(255, 255, 255, 0.09);
+    border-radius: 0.5rem;
+  }
+
   #formParent {
     display: flex;
     flex-wrap: wrap;

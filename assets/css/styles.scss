@@ -74,6 +74,9 @@ body{
 }
 /* End Navbar */
 /* Checkbox Filter */
+a #upArrow{
+  display: none;
+}
 #checkboxes p{
   color: #CF0034;
 }
@@ -102,6 +105,12 @@ fieldset{
   .allLang, .allCat, .allAuth, .anyDur, .allTop{
     width: 13rem;
   }
+}
+#upArrow{
+  color: #CF0034;
+  position: relative;
+  float: right;
+  margin-bottom: .5rem;
 }
 /* End Checkbox Filter */
 /* Videos container */
@@ -218,6 +227,12 @@ fieldset{
   }
 }
 @media all and (max-width: 800px){
+  #wrapperFormParent{
+    width: 95%;
+    margin: .5rem auto;
+    background-color: rgba(255, 255, 255, .09);
+    border-radius: .5rem;
+  }
   #formParent{
     display: flex;
     flex-wrap: wrap;

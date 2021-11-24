@@ -5,7 +5,7 @@ window.onload = async () => {
   if(someData){
     setTimeout(function(){
       loader.classList.add("hidden");
-    },1010)
+    },1500)
   };
 }
 // Navbar toggle menu
@@ -82,12 +82,13 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
   .join('');
   // If small screen size
   if(mobileView){
+    document.querySelector('a #upArrow').style.display = 'block';
     filterBy.classList.add('mobileButton');
     filterBy.classList.add('btn');
     wrapperFormParent.classList.add('formHidden');
     filterBy.addEventListener('click', function(){
   // change text when open or close filters
-      (filterBy.innerHTML === "filter by:") ? (filterBy.innerHTML = "close filter") : (filterBy.innerHTML = "filter by:");
+      (filterBy.innerHTML === "Filter by:") ? (filterBy.innerHTML = "Close Filters") : (filterBy.innerHTML = "Filter by:");
   // hide or display checkbox filters
       (wrapperFormParent.classList.contains('formHidden'))
         ?

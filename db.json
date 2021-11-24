@@ -2,7 +2,7 @@
   "videos": [
     {
       "name": "Se détacher des pensées par Christophe André",
-      "classes": ["French", "Christophe_André", "Meditation", "Medium", "thoughts"],
+      "classes": ["French", "Christophe_André", "Meditation", "Medium", "Thoughts"],
       "link": "bXKKhOadDu8",
       "duration": "11.42",
       "description": "some description comes later"
@@ -65,7 +65,7 @@
     },
     {
       "name": "Pleine conscience de la douceur et du bonheur par Christophe André",
-      "classes": ["French", "Christophe_André", "Meditation", "Medium", "happiness"],
+      "classes": ["French", "Christophe_André", "Meditation", "Medium", "Happiness"],
       "link": "wKu2Fi4l4Sk",
       "duration": "15.23",
       "description": "some description comes later"
