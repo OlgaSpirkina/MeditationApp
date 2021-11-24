@@ -65,7 +65,7 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
       `
         <span class="d-flex justify-content-start align-items-center">
             <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
-            <label for="${title}">${title}</label>
+            <label for="${title}">${title.replace(/_/g, ' ')}</label>
         </span>
       `);
     return html;
