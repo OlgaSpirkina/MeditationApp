@@ -17,13 +17,16 @@ nav ul li {
   color: #dd8300;
 }
 
-#language, #author, #type-of-content, #duration, #topic {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+#formParent {
+  width: 100%;
+  margin: 0 0.5rem;
+  padding: 0;
 }
 
 fieldset {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   color: #fff;
   padding: 0.5rem 0;
 }
@@ -109,6 +112,10 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   display: block;
 }
 
+.formHidden {
+  display: none;
+}
+
 /* When no category selected (checkboxes uncheckd) */
 #hiddenDiv {
   position: absolute;
@@ -132,35 +139,13 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 /* End HiddenDiv & HiddenText */
-.commonCategories,
-.commonLanguages,
-.commonAuthors,
-.commonDuration,
-.commonTopics {
-  /*
-  display: none;
-  */
-}
-
-.mobileLegend {
+.mobileButton {
   display: block;
-  background-color: red;
+  background-color: lightgrey;
   padding: 0.5rem;
   color: #fff;
   width: 10rem;
-}
-
-.mobileCheckbParent {
-  /*
-  display: none;
-  */
-  z-index: 2;
-  background-color: #333;
-}
-
-.show {
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
 }
 
 @media all and (max-width: 535px) {
@@ -186,13 +171,18 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 @media all and (max-width: 800px) {
   #formParent {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    margin-left: 1rem;
+  }
+  #formParent fieldset {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+  }
+  #formParent span {
+    margin: 0.1rem 0;
   }
 
   #hiddenText {

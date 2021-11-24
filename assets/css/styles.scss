@@ -14,12 +14,15 @@ nav{
 #checkboxes p{
   color: #dd8300;
 }
-#language,#author,#type-of-content,#duration,#topic{
+#formParent{
+  width: 100%;
+  margin: 0 .5rem;
+  padding: 0;
+}
+fieldset{
   display: flex;
   justify-content: start;
   align-items: center;
-}
-fieldset{
   color: #fff;
   padding: .5rem 0;
   legend{
@@ -41,7 +44,6 @@ fieldset{
   width: 100%;
   margin: auto;
 }
-
 .youtube{
   display: none;
   width: 23rem;
@@ -100,6 +102,9 @@ fieldset{
 .show{
   display: block;
 }
+.formHidden{
+  display: none;
+}
 /* When no category selected (checkboxes uncheckd) */
 #hiddenDiv{
   position: absolute;
@@ -122,33 +127,15 @@ fieldset{
 }
 /* End HiddenDiv & HiddenText */
 
-.commonCategories,
-.commonLanguages,
-.commonAuthors,
-.commonDuration,
-.commonTopics{
-  /*
-  display: none;
-  */
-}
-.mobileLegend{
+.mobileButton{
   display: block;
-  background-color: red;
+  background-color: lightgrey;
   padding: .5rem;
   color: #fff;
   width: 10rem;
+  margin: 0 auto;
 }
-.mobileCheckbParent{
-  /*
-  display: none;
-  */
-  z-index: 2;
-  background-color: #333;
-}
-.show{
-  display: flex;
-  flex-direction: column;
-}
+
 @media all and (max-width: 535px){
   .youtube{
     width: 20rem;
@@ -171,14 +158,20 @@ fieldset{
 }
 @media all and (max-width: 800px){
   #formParent{
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    margin-left: 1rem;
+    fieldset{
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+    span{
+      margin: .1rem 0;
+    }
   }
+
   #hiddenText{
     font-size: 1rem;
   }

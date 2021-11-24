@@ -9,7 +9,7 @@ window.onload = async () => {
   };
 }
 let checkboxArr = [];
-// Create Form & Fieldset for small or large screen size
+// Function to create Form & Fieldset to display checkbox filters
 const createFormFieldset = (idParam) => {
   const formParent = document.getElementById('formParent'),
         myForm = document.createElement('form'),
@@ -25,138 +25,37 @@ const languageForm = createFormFieldset('language'),
       durationForm = createFormFieldset('duration'),
       topicForm = createFormFieldset('topic'),
 // Variables for forms & checkboxes
-      language = document.getElementById('language'),
+      language = document.getElementById('language');
       author = document.getElementById('author'),
       typeOfContent = document.getElementById('type-of-content'),
       duration = document.getElementById('duration'),
       topic = document.getElementById('topic'),
-      videos = document.getElementById('videos');
-
-// Create Checkbox filters different in large or small screen
+      videos = document.getElementById('videos'),
+// Variables for all Forms wrapper and filterBy used for mobile screen size to hide or show checkbox filters
+      wrapperFormParent = document.getElementById('wrapperFormParent'),
+      filterBy = document.getElementById('filterBy');
+// Create Checkbox filters
 const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
+// There will be some changes in small screen size
   const mql = window.matchMedia('(max-width: 800px)');
   let mobileView = mql.matches;
+// Create an array with all labels
   someData.forEach(elem => {
     checkboxArr.push(elem.classes[index])
   })
   checkboxArr.push(allSmth);
+// Filtering the array of labels to remove doubles
   checkboxArr = checkboxArr.filter(function(m, index){
     return checkboxArr.indexOf(m) === index;
   }).sort();
-  if(mobileView){
-    console.log(checkboxArr);
-    wrapper.innerHTML +=
-    `
-      <legend
-        data-bs-toggle="modal"
-        data-bs-target="#checkboxModal"
-        onclick="displayCheckboxModal(['All Languages', 'en', 'fr'], '${allSmthClass}', '${allSmth}', '${checkboxArr}')"
-        class="btn mobileLegend ${commonClass}"
-      >
-        ${heading}
-      </legend>
-    `
-    /*
-    `
-    <legend
-      class="btn mobileLegend ${commonClass}"
-      data-bs-toggle="modal"
-      data-bs-target="#checkboxModal"
-      onclick="displayCheckboxModal('${checkboxArr}', '${allSmthClass}', '${title}', ${allSmth})"
-    >
-      ${heading}
-    </legend>`
-    */
-/*
-    const mobileCheckbParent = document.createElement('div'),
-          legend = document.createElement('legend');
-    mobileCheckbParent.setAttribute('class', `mobileCheckbParent ${commonClass}`);
-    legend.setAttribute('class', `btn mobileLegend ${commonClass}`);
-    legend.setAttribute("data-toggle", "modal");
-    legend.setAttribute("data-target", "#checkboxModal");
-    legend.innerHTML = heading;
-    wrapper.appendChild(legend);
-    wrapper.appendChild(mobileCheckbParent);
-    mobileCheckbParent.innerHTML =
-    checkboxArr.map(function(title){
-      (title === allSmth)
-        ?
-        (html =
-        `
-          <span class="theCheckboxes ${allSmthClass}">
-              <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
-              <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
-          </span>
-        `)
-        :
-        (html =
-        `
-          <span class="theCheckboxes">
-              <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
-              <label for="${title}">${title}</label>
-          </span>
-        `);
-      return html;
-    })
-    .join('');
-*/
-  }
-  else {
-    wrapper.innerHTML = `<legend>${heading}</legend>` +
-    checkboxArr.map(function(title){
-      (title === allSmth)
-        ?
-        (html =
-        `
-          <span class="d-flex justify-content-start align-items-center ${allSmthClass}">
-              <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
-              <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
-          </span>
-        `)
-        :
-        (html =
-        `
-          <span class="d-flex justify-content-start align-items-center">
-              <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
-              <label for="${title}">${title}</label>
-          </span>
-        `);
-      return html;
-    })
-    .join('');
-  }
-  checkboxArr = [];
-  /*
-  const legends = document.querySelectorAll('.mobileLegend'),
-        hiddenChecks = document.querySelectorAll('.mobileCheckbParent');
-  legends.forEach((legend) => {
-    legend.addEventListener('click', function(){
-      if(legend.classList.contains(commonClass)){
-        for(let i=0; i<hiddenChecks.length; i++){
-          if(hiddenChecks[i].classList.contains(commonClass)){
-
-            //hiddenChecks[i].classList.toggle('show');
-          }
-        }
-      }
-    });
-  })
-  */
-}
-// Checkbox modal
-const displayCheckboxModal = (checkboxA, allSmthClass, allSmth, lastParam) => {
-
-  wordArray = lastParam.split(',');
-
-  console.log(wordArray);
-  let html;
-  document.getElementById('checkboxModalBody').innerHTML =
-  wordArray.map(function(title){
+// Display checkboxes. Wrapper is a form + fieldset
+  wrapper.innerHTML = `<legend>${heading}</legend>` +
+  checkboxArr.map(function(title){
     (title === allSmth)
       ?
       (html =
       `
-        <span class="theCheckboxes ${allSmthClass}">
+        <span class="d-flex justify-content-start align-items-center ${allSmthClass}">
             <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
             <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
         </span>
@@ -164,7 +63,7 @@ const displayCheckboxModal = (checkboxA, allSmthClass, allSmth, lastParam) => {
       :
       (html =
       `
-        <span class="theCheckboxes">
+        <span class="d-flex justify-content-start align-items-center">
             <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
             <label for="${title}">${title}</label>
         </span>
@@ -172,11 +71,29 @@ const displayCheckboxModal = (checkboxA, allSmthClass, allSmth, lastParam) => {
     return html;
   })
   .join('');
+  // If small screen size
+  if(mobileView){
+    filterBy.classList.add('mobileButton');
+    filterBy.classList.add('btn');
+    wrapperFormParent.classList.add('formHidden');
+    filterBy.addEventListener('click', function(){
+  // change text when open or close filters
+      (filterBy.innerHTML === "filter by:") ? (filterBy.innerHTML = "close filter") : (filterBy.innerHTML = "filter by:");
+  // hide or display checkbox filters
+      (wrapperFormParent.classList.contains('formHidden'))
+        ?
+      (wrapperFormParent.classList.remove('formHidden'))
+        :
+      (wrapperFormParent.classList.add('formHidden'));
+    })
+  }
+  checkboxArr = [];
 }
 // Display Videos
 let classes;
 const displayVideos = (anyArray, wrapper) => {
   let html;
+  // wrapper is an html section
     wrapper.innerHTML =
     anyArray.map(function(video){
       classes = "youtube col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3 ";
@@ -201,6 +118,7 @@ const displayVideos = (anyArray, wrapper) => {
       return html;
     }).join('');
 }
+// A modal to display Youtube videos & descriptions. The Modal is a bootstrap modal created in html file
 const displayModal = (link, name, description) => {
   document.getElementById('youtubeModalLabel').innerHTML = name;
   document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
