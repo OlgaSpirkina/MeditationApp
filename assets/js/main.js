@@ -8,6 +8,13 @@ window.onload = async () => {
     },1010)
   };
 }
+// Navbar toggle menu
+const toggleButton = document.getElementsByClassName('toggle-button')[0];
+const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+toggleButton.addEventListener('click', ()=>{
+  navbarLinks.classList.toggle('active');
+})
+// End Navbar menu
 let checkboxArr = [];
 // Function to create Form & Fieldset to display checkbox filters
 const createFormFieldset = (idParam) => {
@@ -34,7 +41,9 @@ const languageForm = createFormFieldset('language'),
 // Variables for all Forms wrapper and filterBy used for mobile screen size to hide or show checkbox filters
       wrapperFormParent = document.getElementById('wrapperFormParent'),
       filterBy = document.getElementById('filterBy');
+//
 // Create Checkbox filters
+//
 const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
 // There will be some changes in small screen size
   const mql = window.matchMedia('(max-width: 800px)');
@@ -94,29 +103,29 @@ let classes;
 const displayVideos = (anyArray, wrapper) => {
   let html;
   // wrapper is an html section
-    wrapper.innerHTML =
-    anyArray.map(function(video){
-      classes = "youtube col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3 ";
-      video.classes.forEach(item => { classes += ` ${item} ` })
-      html =
-      `
-        <div
-          class="${classes}"
-        >
-          <div class="d-flex justify-content-center align-items-center ">
-            <div id="icon"></div>
-            <i
-              class="fab fa-5x fa-youtube"
-              data-bs-toggle="modal"
-              data-bs-target="#youtubeModal"
-              onclick="displayModal('${video.link}', '${video.name}', '${video.description}')"
-            >
-            </i>
-            <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
-          </div>
-        </div>`;
-      return html;
-    }).join('');
+  wrapper.innerHTML =
+  anyArray.map(function(video){
+    classes = "youtube col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-3 ";
+    video.classes.forEach(item => { classes += ` ${item} ` })
+    html =
+    `
+      <div
+        class="${classes}"
+      >
+        <div class="d-flex justify-content-center align-items-center ">
+          <div id="icon"></div>
+          <i
+            class="fab fa-5x fa-youtube"
+            data-bs-toggle="modal"
+            data-bs-target="#youtubeModal"
+            onclick="displayModal('${video.link}', '${video.name}', '${video.description}')"
+          >
+          </i>
+          <img src="https://i.ytimg.com/vi/${video.link}/sddefault.jpg"/>
+        </div>
+      </div>`;
+    return html;
+  }).join('');
 }
 // A modal to display Youtube videos & descriptions. The Modal is a bootstrap modal created in html file
 const displayModal = (link, name, description) => {
