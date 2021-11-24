@@ -2,84 +2,84 @@
   "videos": [
     {
       "name": "Se détacher des pensées par Christophe André",
-      "classes": ["fr", "andre", "meditation", "medium", "thoughts"],
+      "classes": ["French", "Christophe_André", "meditation", "medium", "thoughts"],
       "link": "bXKKhOadDu8",
       "duration": "11.42",
       "description": "some description comes later"
     },
     {
       "name": "Les personnalités toxiques - La chronique de Christophe André",
-      "classes": ["fr", "andre", "tips", "short", "dailyLife"],
+      "classes": ["French", "Christophe_André", "tips", "short", "dailyLife"],
       "link": "AeCi-oFVdPs",
       "duration": "4.24",
       "description": "some description comes later"
     },
     {
       "name": "Exploring Life`s Biggest Questions with Andy Puddicombe: Why Meditate?",
-      "classes": ["en", "andy", "tips", "long", "dailyLife"],
+      "classes": ["English", "And_Puddicombe", "tips", "long", "dailyLife"],
       "link": "8XItP4XVbIA",
       "duration": "26.21",
       "description": "In this episode Headspace co-founder, Andy Puddicombe-world-renowned expert on meditation and a former Buddhist monk- heads to Utah for a short hike around Lake Powell and a discussion about the purpose of meditation."
     },
     {
       "name": "Reset: Decompress Your Body and Mind by Andy Puddicombe",
-      "classes": ["en", "andy", "meditation", "medium", "reset"],
+      "classes": ["English", "And_Puddicombe", "meditation", "medium", "reset"],
       "link": "QHkXvPq2pQE",
       "duration": "10.07",
       "description": " This meditation encourages us to pause and reset between tasks, helping you feel more present and better able to enjoy whatever comes next."
     },
     {
       "name": "All it takes is 10 mindful minutes by Andy Puddicombe",
-      "classes": ["en", "andy", "tedTalk", "medium", "dailyLife"],
+      "classes": ["English", "And_Puddicombe", "tedTalk", "medium", "dailyLife"],
       "link": "qzR62JJCMBQ",
       "duration": "9.24",
       "description": "When is the last time you did absolutely nothing for 10 whole minutes? Not texting, talking or even thinking? Mindfulness expert Andy Puddicombe describes the transformative power of doing just that: Refreshing your mind for 10 minutes a day, simply by being mindful and experiencing the present moment. (No need for incense or sitting in strange positions.)"
     },
     {
       "name": "How mindfulness changes the emotional life of our brains by Richard J. Davidson | TEDxSanFrancisco",
-      "classes": ["en", "davidson", "tedTalk", "medium", "mindfulness"],
+      "classes": ["English", "Richard_J.Davidson", "tedTalk", "medium", "mindfulness"],
       "link": "7CBfCW67xT8",
       "duration": "17.52",
       "description": "Why is it that some people are more vulnerable to life`s slings and arrows and others more resilient? In this eye-opening talk, Richard Davidson discusses how mindfulness can improve well-being and outlines strategies to boost four components of a healthy mind: awareness, connection, insight, and purpose. Richard Davidson is researching how mindfulness changes the emotional life of our brains and what we know about people`s brains of individuals showing more resilienc than others. Davidson is Wiliam James and Vilas professor of psychology and psychiatry at the University of Wisconsin-Madison as well as founder and director of the Center for Healthy Minds."
     },
     {
       "name": "La méditation de pleine conscience par Inken Dechow & Dominique Retoux | TEDxUniversitéParisDauphine",
-      "classes": ["fr", "others", "tedTalk", "long", "dailyLife"],
+      "classes": ["French", "Others", "tedTalk", "long", "dailyLife"],
       "link": "VEvMxIhXL0E",
       "duration": "19.10",
       "description": "Dans ce talk, Inken Dechow et Dominique Retoux, qui ont suivi la prestigieuse formation de méditation de pleine conscience du professeur émérite Jon Kabat-Zinn à l`Université du Massachusetts, nous accompagnent dans notre recherche d`équilibre à travers une initiation à la méditation. Iken Dechow, ancienne Dauphinoise et ingénieure de formation, a travaillé durant quinze années aux achats pour le groupe L`Oréal. Dominique Retoux a lui collaboré pendant huit ans avec Médecins Sans Frontières avant de lancer son projet de start-up. Tous deux sont maintenant instructeurs pour Mind, l`application de méditation."
     },
     {
       "name": "10 MIN GUIDED MINDFULNESS MEDITATION - JON KABAT ZINN",
-      "classes": ["en", "kabatzinn", "meditation", "medium", "mindfulness"],
+      "classes": ["English", "Jon_Kabat_Zinn", "meditation", "medium", "mindfulness"],
       "link": "2GjZanuXWWk",
       "duration": "10.02",
       "description": "some description comes later"
     },
     {
       "name": "9 Attitudes of Mindfulness by Jon Kabat Zinn",
-      "classes": ["en", "kabatzinn", "tips", "long", "dailyLife"],
+      "classes": ["English", "Jon_Kabat_Zinn", "tips", "long", "dailyLife"],
       "link": "2n7FOBFMvXg",
       "duration": "26.27",
       "description": "some description comes later"
     },
     {
       "name": "Pleine conscience de la douceur et du bonheur par Christophe André",
-      "classes": ["fr", "andre", "meditation", "medium", "happiness"],
+      "classes": ["French", "Christophe_André", "meditation", "medium", "happiness"],
       "link": "wKu2Fi4l4Sk",
       "duration": "15.23",
       "description": "some description comes later"
     },
     {
       "name": "Être et rester zen",
-      "classes": ["fr", "andre", "tips", "long", "dailyLife"],
+      "classes": ["French", "Christophe_André", "tips", "long", "dailyLife"],
       "link": "3r1--xjiucc",
       "duration": "34.02",
       "description": "Savoir être calme et serein face aux adversités de la vie… nous en rêvons tous, mais ce n`est pas toujours facile de rester zen au quotidien ! Dans ce tuto, Christophe ANDRE explique ce que veut dire «être zen» et présente 4 outils pour mieux gérer son stress: un travail sur les pensées inspiré de la philosophie stoïcienne, la méditation de pleine conscience, la psychologie positive et comment changer son regard sur la vie."
     },
     {
       "name": "How to Embrace your Own Awareness || Jon Kabat-Zinn Meditation",
-      "classes": ["en", "kabatzinn", "meditation", "long", "mindfulness"],
+      "classes": ["English", "Jon_Kabat_Zinn", "meditation", "long", "mindfulness"],
       "link": "JQgkGBdt89A",
       "duration": "22.05",
       "description": "some description comes later"
