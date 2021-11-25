@@ -161,7 +161,7 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   width: 23rem;
   border-radius: 1rem;
 }
-.youtube #icon {
+.youtube .icon {
   z-index: 1;
   margin: 0;
   padding: 0;
@@ -215,8 +215,7 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   display: block;
   background-color: var(--lightGrey);
   padding: 0.5rem;
-  color: #fff;
-  width: 10rem;
+  width: 20rem;
   margin: 0 auto;
 }
 

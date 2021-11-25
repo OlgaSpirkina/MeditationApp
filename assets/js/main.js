@@ -130,7 +130,7 @@ const displayVideos = (anyArray, wrapper) => {
         class="${classes}"
       >
         <div class="d-flex justify-content-center align-items-center ">
-          <div id="icon"></div>
+          <div class="icon"></div>
           <i
             class="fab fa-5x fa-youtube"
             data-bs-toggle="modal"

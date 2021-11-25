@@ -148,7 +148,7 @@ fieldset{
     width: 23rem;
     border-radius: 1rem;
   }
-  #icon{
+  .icon{
     z-index: 1;
     margin: 0;
     padding: 0;
@@ -198,8 +198,7 @@ fieldset{
   display: block;
   background-color: var(--lightGrey);
   padding: .5rem;
-  color: #fff;
-  width: 10rem;
+  width: 20rem;
   margin: 0 auto;
 }
 @media all and (max-width: 535px){
@@ -247,7 +246,6 @@ fieldset{
   }
 }
 @media all and (min-width: 840px) and (max-width: 935px){
-
   .youtube{
     width: 16rem;
     img{
