@@ -92,6 +92,12 @@ body {
 }
 
 /* End Navbar */
+/* Presentation */
+.presentation p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
 /* Checkbox Filter */
 #checkboxes p {
   color: var(--mainReddish);
@@ -220,6 +226,11 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 @media all and (max-width: 535px) {
+  .presentation p {
+    font-size: 1rem;
+    line-height: normal;
+  }
+
   .navbar .toggle-button {
     display: block;
   }

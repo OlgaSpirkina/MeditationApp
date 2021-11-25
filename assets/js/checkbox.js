@@ -168,7 +168,7 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
         hiddenDiv.style.display = "none";
         hiddenText.style.visibility = "hidden";
   // All Smth checkbox is checked when all the other checkboxes of the same category are checked
-        everyCheckboxIsUncheckedOrChecked(allLanguages, true, 2, "All Languages", allLangLabel, "Unselect All Languages");
+        everyCheckboxIsUncheckedOrChecked(allLanguages, true, 3, "All Languages", allLangLabel, "Unselect All Languages");
         everyCheckboxIsUncheckedOrChecked(allAuthors, true, 5, "All Authors", allAuthLabel, "Unselect All Authors");
         everyCheckboxIsUncheckedOrChecked(allContents, true, 3, "All Categories", allCatLabel, "Unselect All Categories");
         everyCheckboxIsUncheckedOrChecked(allDurations, true, 3, "Any duration", anyDurLabel, "Unselect Any Duration");
@@ -183,7 +183,7 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
         })
       }
       if(allCheckboxes[i].checked === false){
-        everyCheckboxIsUncheckedOrChecked(allLanguages, false, 2, "All Languages", allLangLabel, "Select All Languages", "one Language");
+        everyCheckboxIsUncheckedOrChecked(allLanguages, false, 3, "All Languages", allLangLabel, "Select All Languages", "one Language");
         everyCheckboxIsUncheckedOrChecked(allAuthors, false, 5, "All Authors", allAuthLabel, "Select All Authors", "one Author");
         everyCheckboxIsUncheckedOrChecked(allContents, false, 3, "All Categories", allCatLabel, "Select All Categories", "one Category");
         everyCheckboxIsUncheckedOrChecked(allDurations, false, 3, "Any duration", anyDurLabel, "Select Any Duration", "one Duration Parameter");
