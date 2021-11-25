@@ -15,6 +15,13 @@
       "description": "some description comes later"
     },
     {
+      "name": "MEDITACIÓN GUIADA PROFUNDA - 30 minutos con cuencos tibetanos voz femenina en castellano",
+      "classes": ["Spanish", "Other_Authors", "Meditation", "Long", "Reset"],
+      "link": "80DcgG-3vBE",
+      "duration": "27.35",
+      "description": "Hoy nos sumergimos en el océano de la consciencia acompañados de un viaje sonoro que vibra acorde a un estado profundo meditativo. Ponte cómodo, cierra tus ojos, busca tu espacio de calma y déjate llevar por esta meditación guiada de 30 minutos en la que te llevo hasta la relajación total de tu cuerpo y la lucidez plena de tu espíritu."
+    },
+    {
       "name": "Exploring Life`s Biggest Questions with Andy Puddicombe: Why Meditate?",
       "classes": ["English", "Andy_Puddicombe", "Tips", "Long", "Daily_Life"],
       "link": "8XItP4XVbIA",
@@ -57,6 +64,13 @@
       "description": "some description comes later"
     },
     {
+      "name": "Meditación en Español en 10 Minutos",
+      "classes": ["Spanish", "Other_Authors", "Meditation", "Short", "Reset"],
+      "link": "N3W1jWcpIBs",
+      "duration": "10.15",
+      "description": "Disfruta esta sesión de meditación en 5 minutos, ¡creada especialmente para vosotros! Aprende cómo experimentar paz y reducir el estrés. No necesitas mucho tiempo, solo 10 minutos."
+    },
+    {
       "name": "9 Attitudes of Mindfulness by Jon Kabat Zinn",
       "classes": ["English", "Jon_Kabat_Zinn", "Tips", "Long", "Daily_Life"],
       "link": "2n7FOBFMvXg",
@@ -83,6 +97,41 @@
       "link": "JQgkGBdt89A",
       "duration": "22.05",
       "description": "some description comes later"
+    },
+    {
+      "name": "Jon Kabat-Zinn Q & A: Working with Mental Anxiety",
+      "classes": ["English", "Jon_Kabat_Zinn", "Tips", "Long", "Thoughts"],
+      "link": "oAVhMg5bHHA",
+      "duration": "18.55",
+      "description": "This session is from a series of livestreams with Jon Kabat-Zinn as a part of “Mitigation Retreat” in 2020 brought to you by Jon and Wisdom 2.0. All the Q & A`s and full sessions are available on your Youtube page."
+    },
+    {
+      "name": "15 MIN GUIDED MINDFULNESS MEDITATION - JON KABAT ZINN",
+      "classes": ["English", "Jon_Kabat_Zinn", "Meditation", "Medium", "Mindfulness"],
+      "link": "p6q9KFv0xF0",
+      "duration": "14.52",
+      "description": "This is a 15min guided meditation from Dr Jon Kabat Zinn. You will be practicing mindfulness during this mindfulness meditation. Mindfulness is critical to good time management. Enjoy this meditation with Jon Kabat Zinn."
+    },
+    {
+      "name": "Meditación en 5 minutos",
+      "classes": ["Spanish", "Other_Authors", "Meditation", "Short", "Reset"],
+      "link": "sgJCs2B12YE",
+      "duration": "5.27",
+      "description": "Disfruta esta sesión de meditación en 5 minutos, ¡creada especialmente para vosotros! Aprende cómo experimentar paz y reducir el estrés. No necesitas mucho tiempo, solo 5 minutos."
+    },
+    {
+      "name": "The Four Constituents of Well-Being",
+      "classes": ["English", "Richard_J.Davidson", "Tips", "Medium", "Daily_Life"],
+      "link": "HeBpsiFQiTI",
+      "duration": "13.36",
+      "description": "Richard Davidson, founder of the Center for Healthy Minds at the University of Wisconsin-Madison, explains the four constituents of well-being. These constituents are rooted in specific brain circuits that exhibit neuroplasticity, which gives us the opportunity to enhance our well-being with practice. Filmed at Mindfulness & Well-Being at Work (November 2015)."
+    },
+    {
+      "name": "4 conseils pour en finir avec le stress",
+      "classes": ["French", "Christophe_André", "Tips", "Short", "Daily_Life"],
+      "link": "REDa0JX3cY4",
+      "duration": "3.18",
+      "description": "Le psychiatre Christophe André raconte comment retrouver sa liberté intérieure.🙏"
     }
   ]
 }
