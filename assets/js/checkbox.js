@@ -151,6 +151,7 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
             elem.checked = theBool;
             if(elem.checked === false){
               disableAllVideos(disablePhrase);
+              console.log(initialVideosHeight)
 // add a height to cover div because if not it takes the heigth of videos container that may be not accurate in this particular case
               document.getElementById('hiddenDiv').style.height = initialVideosHeight+50+"px";
             }
@@ -241,6 +242,7 @@ const disableAllVideos = (word) => {
   const hiddenDiv = document.getElementById('hiddenDiv');
   const hiddenText = document.getElementById('hiddenText');
   let videosTotalHeight = videos.offsetHeight;
+  console.log(videosTotalHeight, "total height")
   videosTotalHeight += 50; // add 50px to the heigth of videos container
   hiddenDiv.style.display = "block";
   hiddenDiv.style.height = videosTotalHeight+"px"; //hiddenDiv will cover all the videos
