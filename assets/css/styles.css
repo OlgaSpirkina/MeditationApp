@@ -80,10 +80,6 @@ body {
 
 /* End Navbar */
 /* Checkbox Filter */
-a #upArrow {
-  display: none;
-}
-
 #checkboxes p {
   color: #CF0034;
 }
@@ -116,11 +112,24 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   width: 13rem;
 }
 
+/* when scroll down there is an arrow up  */
 #upArrow {
   color: #CF0034;
-  position: relative;
-  float: right;
-  margin-bottom: 0.5rem;
+  padding: 0.1rem;
+}
+
+#upArrowContainer {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 4px;
 }
 
 /* End Checkbox Filter */

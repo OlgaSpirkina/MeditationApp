@@ -1,3 +1,93 @@
+// Number of videos per page regarding the screen size
+let maxVideosPerPage = 8;
+$(document).ready(function() {
+  /*
+  if(($(window).width() > 300) && ($(window).width()<=405)){
+    maxVideosPerPage = 11;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width() > 406) && ($(window).width()<=440)){
+    maxVideosPerPage = 9;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width() > 441) && ($(window).width()<=575)){
+    maxVideosPerPage = 7;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>575) && ($(window).width()<=590)){
+    maxVideosPerPage = 30;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>590) && ($(window).width()<=620)){
+    maxVideosPerPage = 28;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>620) && ($(window).width()<=670)){
+    maxVideosPerPage = 22;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>670) && ($(window).width()<=768)){
+    maxVideosPerPage = 20;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>768) && ($(window).width()<=790)){
+    maxVideosPerPage = 45;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>790) && ($(window).width()<=810)){
+    maxVideosPerPage = 45;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>810) && ($(window).width()<=835)){
+    maxVideosPerPage = 42;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>835) && ($(window).width()<=850)){
+    maxVideosPerPage = 39;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>850) && ($(window).width()<=900)){
+    maxVideosPerPage = 36;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>900) && ($(window).width()<=950)){
+    maxVideosPerPage = 33;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>951) && ($(window).width()<=1000)){
+    maxVideosPerPage = 33;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>1001) && ($(window).width()<=1015)){
+    maxVideosPerPage = 30;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>1015) && ($(window).width()<=1045)){
+    maxVideosPerPage = 27;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>1045) && ($(window).width()<=1101)){
+    maxVideosPerPage = 24;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>1101) && ($(window).width()<=1300)){
+    maxVideosPerPage = 21;
+    return show(maxVideosPerPage);
+  }
+  if(($(window).width()>1301) && ($(window).width()<=1450)){
+    maxVideosPerPage = 18;
+    return show(maxVideosPerPage);
+  }
+  */
+  if(($(window).width()>1451) && ($(window).width()<=1700)){
+    maxVideosPerPage = 8;
+    return show(maxVideosPerPage);
+  }
+  if($(window).width()>1701){
+    maxVideosPerPage = 8;
+    return show(maxVideosPerPage);
+  }
+ });
 // Get all rel to filter videos
 const getClassOfCheckboxes = (checkboxes) => {
   let classOfCheckb = [];
@@ -53,6 +143,7 @@ setTimeout(function(){
   for(let i=0; i<videoList.length; i++){
     videoList[i].classList.add('show');
   }
+  show(maxVideosPerPage);
 })();
 /*
 Make first checkbox All Smth of each category be checked/unchecked depending on the state of all other
@@ -129,9 +220,10 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
         theTopic: getClassOfCheckboxes(allTopics),
       };
       filterWhenChecked(videoList, filtersChecked);
+      show(maxVideosPerPage);
     })
   }
-},500);
+},1510);
 // Filter based on rel attribute of checkboxes & class of videos
 const filterWhenChecked = (theArray, filters) => {
   let hiddenElems = [];
@@ -161,4 +253,21 @@ const hiddenText = document.getElementById('hiddenText');
   hiddenDiv.style.display = "block";
   hiddenText.style.visibility = "visible";
   hiddenText.innerHTML = `Choose at least ${word}`;
+}
+// Add pagination. JQuery plugin
+function show(maxVideosPerPage) {
+  let arrayOfVids = Array.from(document.querySelectorAll(".show"));
+  $('#pagin').pagination({
+    dataSource: Array.from(document.querySelectorAll(".show")),
+    pageSize: maxVideosPerPage,
+    showPrevious: false,
+    showNext: false,
+    className: 'paginationjs-theme-blue',
+    callback: function(data, pagination) {
+      document.querySelectorAll(".show").forEach((el) => el.classList.remove("show"));
+      data.forEach((el) => el.classList.add("show"));
+/* hide pagination div when there is only one page */
+      (arrayOfVids.length < maxVideosPerPage) ? $('#pagin').hide() : $('#pagin').show();
+    }
+  })
 }

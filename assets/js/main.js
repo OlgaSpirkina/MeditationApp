@@ -1,13 +1,15 @@
 // Loading
 const loader = document.querySelector(".loader");
-let theVideoList = document.querySelectorAll('.youtube');
+//let theVideoList = document.querySelectorAll('.youtube');
 window.onload = async () => {
   let someData = await fetchVideos;
   if(someData){
   // display all the videos hidden by default
+  /*
     for(let i=0; i<theVideoList.length; i++){
       theVideoList[i].classList.add('show');
     }
+    */
     setTimeout(function(){
       loader.classList.add("hidden");
     },1500)
@@ -87,7 +89,9 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
   .join('');
   // If small screen size
   if(mobileView){
+    /*
     document.querySelector('a #upArrow').style.display = 'block';
+    */
     filterBy.classList.add('mobileButton');
     filterBy.classList.add('btn');
     wrapperFormParent.classList.add('formHidden');
@@ -159,3 +163,20 @@ async function fetchVideos(){
 fetchVideos().catch(error => {
   error.message;
 });
+// Detect scroll down
+var upArrowContainer = document.getElementById("upArrowContainer");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    upArrowContainer.style.display = "block";
+  } else {
+    upArrowContainer.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function goToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

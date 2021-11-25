@@ -10,6 +10,7 @@
   <!-- CSS -->
   <link href="assets/css/styles.css" rel="stylesheet">
   <link href="assets/css/checkbox.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/pagination.css">
   <link rel="icon" href="assets/img/dove.ico" />
   <!-- FontAwsome -->
   <script src="https://kit.fontawesome.com/e206f53c0e.js" crossorigin="anonymous"></script>
@@ -39,10 +40,10 @@
       <p class="my-2" id="filterBy">Filter by:</p>
       <div id="wrapperFormParent">
         <div id="formParent"></div>
-        <a href="#filterBy"><i id="upArrow" class="fas fa-3x fa-caret-square-up"></i></a>
       </div>
     </div>
   </section>
+  <button onclick="goToTop()" id="upArrowContainer" title="Go to top"><i id="upArrow" class="fas fa-3x fa-caret-square-up"></i></button>
 <!-- Videos -->
   <section class="container-fluid">
     <div class="row">
@@ -92,6 +93,12 @@
     </div>
   </div>
   <!-- JavaScript Bundle with Popper -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous">
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="assets/js/pagination.min.js"></script>
 </body>
 </html>
