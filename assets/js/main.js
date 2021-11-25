@@ -1,15 +1,8 @@
 // Loading
 const loader = document.querySelector(".loader");
-//let theVideoList = document.querySelectorAll('.youtube');
 window.onload = async () => {
   let someData = await fetchVideos;
   if(someData){
-  // display all the videos hidden by default
-  /*
-    for(let i=0; i<theVideoList.length; i++){
-      theVideoList[i].classList.add('show');
-    }
-    */
     setTimeout(function(){
       loader.classList.add("hidden");
     },1500)
@@ -47,10 +40,22 @@ const languageForm = createFormFieldset('language'),
       videos = document.getElementById('videos'),
 // Variables for all Forms wrapper and filterBy used for mobile screen size to hide or show checkbox filters
       wrapperFormParent = document.getElementById('wrapperFormParent'),
-      filterBy = document.getElementById('filterBy');
-//
-// Create Checkbox filters
-//
+      filterBy = document.getElementById('filterBy'),
+      upArrowContainer = document.getElementById("upArrowContainer");
+/*
+  Detect Scroll Down in mobile
+*/
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    upArrowContainer.style.display = "block";
+  } else {
+    upArrowContainer.style.display = "none";
+  }
+}
+// End Detect Scroll Down Function
+/*
+  Create Checkbox filters
+*/
 const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
 // There will be some changes in small screen size
   const mql = window.matchMedia('(max-width: 800px)');
@@ -89,9 +94,9 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
   .join('');
   // If small screen size
   if(mobileView){
-    /*
-    document.querySelector('a #upArrow').style.display = 'block';
-    */
+    // Detect scroll down
+    window.onscroll = function() {scrollFunction()};
+    upArrowContainer.addEventListener('click', goToTop);
     filterBy.classList.add('mobileButton');
     filterBy.classList.add('btn');
     wrapperFormParent.classList.add('formHidden');
@@ -108,7 +113,9 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
   }
   checkboxArr = [];
 }
-// Display Videos
+/*
+  Display Videos
+*/
 let classes;
 const displayVideos = (anyArray, wrapper) => {
   let html;
@@ -163,17 +170,7 @@ async function fetchVideos(){
 fetchVideos().catch(error => {
   error.message;
 });
-// Detect scroll down
-var upArrowContainer = document.getElementById("upArrowContainer");
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    upArrowContainer.style.display = "block";
-  } else {
-    upArrowContainer.style.display = "none";
-  }
-}
 
 // When the user clicks on the button, scroll to the top of the document
 function goToTop() {

@@ -1,10 +1,23 @@
+@font-face {
+  /*
+  font-family: 'Chivo', sans-serif;
+  src: local('Noto Sans'), url(./fonts/Chivo-Regular.ttf) format('truetype');
+*/
+}
+:root{
+  --brownBackground: #291d1f;
+  --navbarGrey: #333;
+  --mainReddish: #CF0034;
+  --lightGrey: #A79B8D;
+  //--mainfont: 'Chivo', sans-serif;
+}
 *{
   box-sizing: border-box;
 }
 body{
   margin: 0;
   padding: 0;
-  background-color: #291d1f;
+  background-color: var(--brownBackground);
 }
 /* loading gif */
 .loader{
@@ -38,13 +51,13 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: var(--navbarGrey);
   color: #fff;
   .brand-title{
     font-size: 1.5rem;
     margin: .5rem;
     .fa-dove{
-      color: #CF0034;
+      color: var(--mainReddish);
     }
   }
   .toggle-button{
@@ -69,13 +82,13 @@ body{
   }
 }
 .navbar li:hover{
-  background-color: #555;
+  background-color: var(--lightGrey);
   border-radius: .5rem;
 }
 /* End Navbar */
 /* Checkbox Filter */
 #checkboxes p{
-  color: #CF0034;
+  color: var(--mainReddish);
 }
 #formParent{
   width: 100%;
@@ -90,11 +103,11 @@ fieldset{
   padding: .5rem 0;
   legend{
     font-size: 1rem;
-    width: 160px;
+    width: 200px;
   }
   span{
     display: inline-block;
-    min-width: 11rem;
+    min-width: 15rem;
     input, label{
       cursor: pointer;
     }
@@ -105,7 +118,7 @@ fieldset{
 }
 /* when scroll down there is an arrow up  */
 #upArrow{
-  color: #CF0034;
+  color: var(--mainReddish);
   padding: .1rem;
 }
 #upArrowContainer{
@@ -161,16 +174,16 @@ fieldset{
 .formHidden{
   display: none;
 }
-/* When no category selected (checkboxes uncheckd) */
+/* When no category selected (checkboxes uncheckd) videos are disabled and some text appears */
 #hiddenDiv{
   position: absolute;
   display: none;
   width: 100%;
   min-height: 100px;
   margin-bottom: 2rem;
-  height: 1000px;
+  height: 700px;
   z-index: 99;
-  background-color: #b0b0b0;
+  background-color: var(--lightGrey);
   opacity: .4;
   border-radius: .5rem;
 }
@@ -178,14 +191,14 @@ fieldset{
   font-size: 1.5rem;
   visibility: hidden;
   text-align: start;
-  color: #dd8300;;
+  color: var(--brownBackground);
   z-index: 1000;
 }
 /* End HiddenDiv & HiddenText */
-/* Filter by: button when mobile */
+/* Filter by: button when mobile to display checkbox filters */
 .mobileButton{
   display: block;
-  background-color: rgb(176, 176, 176);
+  background-color: var(--lightGrey);
   padding: .5rem;
   color: #fff;
   width: 10rem;
@@ -254,6 +267,7 @@ fieldset{
     }
     span{
       margin: .1rem 0;
+      width: 11rem;
     }
   }
   #hiddenText{

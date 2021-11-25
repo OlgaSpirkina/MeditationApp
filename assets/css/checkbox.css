@@ -1,13 +1,13 @@
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: #A79B8D;
+  background-color: var(--lightGrey);
   margin: 0;
   font: inherit;
   color: red;
   width: 1.5rem;
   height: 1.5rem;
-  border: 0.1rem solid #A79B8D;
+  border: 0.1rem solid var(--lightGrey);
   border-radius: 0.2rem;
   transform: translateY(-0.075rem);
   display: grid;
@@ -21,7 +21,7 @@ input[type="checkbox"]::before {
   border-radius: 0.15rem;
   transform: scale(0);
   transition: 150ms transform ease-in-out;
-  box-shadow: inset 1em 1em #CF0034;
+  box-shadow: inset 1em 1em var(--mainReddish);
 }
 
 input[type="checkbox"]:checked::before {

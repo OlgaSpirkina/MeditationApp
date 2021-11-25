@@ -1,19 +1,11 @@
 // Number of videos per page regarding the screen size
 let maxVideosPerPage = 8;
 $(document).ready(function() {
+  if(($(window).width() > 300) && ($(window).width()<=575)){
+    maxVideosPerPage = 6;
+    return show(maxVideosPerPage);
+  }
   /*
-  if(($(window).width() > 300) && ($(window).width()<=405)){
-    maxVideosPerPage = 11;
-    return show(maxVideosPerPage);
-  }
-  if(($(window).width() > 406) && ($(window).width()<=440)){
-    maxVideosPerPage = 9;
-    return show(maxVideosPerPage);
-  }
-  if(($(window).width() > 441) && ($(window).width()<=575)){
-    maxVideosPerPage = 7;
-    return show(maxVideosPerPage);
-  }
   if(($(window).width()>575) && ($(window).width()<=590)){
     maxVideosPerPage = 30;
     return show(maxVideosPerPage);
@@ -79,11 +71,7 @@ $(document).ready(function() {
     return show(maxVideosPerPage);
   }
   */
-  if(($(window).width()>1451) && ($(window).width()<=1700)){
-    maxVideosPerPage = 8;
-    return show(maxVideosPerPage);
-  }
-  if($(window).width()>1701){
+  if($(window).width()>1451){
     maxVideosPerPage = 8;
     return show(maxVideosPerPage);
   }
@@ -267,7 +255,7 @@ function show(maxVideosPerPage) {
       document.querySelectorAll(".show").forEach((el) => el.classList.remove("show"));
       data.forEach((el) => el.classList.add("show"));
 /* hide pagination div when there is only one page */
-      (arrayOfVids.length < maxVideosPerPage) ? $('#pagin').hide() : $('#pagin').show();
+      (arrayOfVids.length <= maxVideosPerPage) ? $('#pagin').hide() : $('#pagin').show();
     }
   })
 }
