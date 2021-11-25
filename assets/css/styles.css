@@ -6,7 +6,7 @@
 }
 :root {
   --brownBackground: #291d1f;
-  --navbarGrey: #333;
+  --navbarGrey: #1d2529;
   --mainReddish: #CF0034;
   --lightGrey: #A79B8D;
 }
@@ -223,6 +223,7 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   padding: 0.5rem;
   width: 20rem;
   margin: 0 auto;
+  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.15);
 }
 
 @media all and (max-width: 535px) {

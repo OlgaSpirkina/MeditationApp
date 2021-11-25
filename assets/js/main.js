@@ -97,8 +97,10 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
     // Detect scroll down
     window.onscroll = function() {scrollFunction()};
     upArrowContainer.addEventListener('click', goToTop);
-    filterBy.classList.add('mobileButton');
-    filterBy.classList.add('btn');
+    const filterByClass = ['mobileButton', 'btn', 'rounded-pill'];
+    for(let i=0; i<filterByClass.length; i++){
+      filterBy.classList.add(filterByClass[i]);
+    }
     wrapperFormParent.classList.add('formHidden');
     filterBy.addEventListener('click', function(){
   // change text when open or close filters
