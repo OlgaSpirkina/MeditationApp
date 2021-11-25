@@ -129,7 +129,7 @@ fieldset{
   z-index: 100;
   border: none;
   outline: none;
-  background-color: #fff;
+  background-color: transparent;
   cursor: pointer;
   padding: 0;
   border-radius: 4px;
@@ -180,8 +180,6 @@ fieldset{
   display: none;
   width: 100%;
   min-height: 100px;
-  margin-bottom: 2rem;
-  height: 700px;
   z-index: 99;
   background-color: var(--lightGrey);
   opacity: .4;
@@ -236,7 +234,7 @@ fieldset{
     }
   }
 }
-@media all and (min-width: 536px) and (max-width: 800px){
+@media all and (min-width: 536px) and (max-width: 839px){
   .youtube{
     width: 15rem;
     img{
@@ -248,7 +246,32 @@ fieldset{
     margin: 0;
   }
 }
-@media all and (max-width: 800px){
+@media all and (min-width: 840px) and (max-width: 935px){
+
+  .youtube{
+    width: 16rem;
+    img{
+      width: 16rem;
+    }
+  }
+}
+@media all and (min-width: 936px) and (max-width: 1029px){
+  .youtube{
+    width: 18rem;
+    img{
+      width: 18rem;
+    }
+  }
+}
+@media all and (min-width: 1030px) and (max-width: 1180px){
+  .youtube{
+    width: 20rem;
+    img{
+      width: 20rem;
+    }
+  }
+}
+@media all and (max-width: 820px){
   #wrapperFormParent{
     width: 95%;
     margin: .5rem auto;
@@ -270,6 +293,7 @@ fieldset{
       width: 11rem;
     }
   }
+
   #hiddenText{
     font-size: 1rem;
   }

@@ -1,15 +1,15 @@
 // Number of videos per page regarding the screen size
 let maxVideosPerPage = 8;
 $(document).ready(function() {
-  if(($(window).width() > 300) && ($(window).width()<=575)){
+  if(($(window).width() > 300) && ($(window).width()<=767)){
     maxVideosPerPage = 6;
     return show(maxVideosPerPage);
   }
-  /*
-  if(($(window).width()>575) && ($(window).width()<=590)){
-    maxVideosPerPage = 30;
+  if(($(window).width()>767) && ($(window).width()<=800)){
+    maxVideosPerPage = 9;
     return show(maxVideosPerPage);
   }
+  /*
   if(($(window).width()>590) && ($(window).width()<=620)){
     maxVideosPerPage = 28;
     return show(maxVideosPerPage);
@@ -138,6 +138,7 @@ Make first checkbox All Smth of each category be checked/unchecked depending on 
 chekcboxes of the same category (all checked or all unchecked)
 */
 let allCheckedOrUncheckedArr = [];
+const initialVideosHeight = videosContainer.offsetHeight; // find the initial height of videos container
 const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeholder, phrase, disablePhrase) => {
   anyArr.forEach((elem) => {
     if(elem.checked === theBool){
@@ -150,6 +151,8 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
             elem.checked = theBool;
             if(elem.checked === false){
               disableAllVideos(disablePhrase);
+// add a height to cover div because if not it takes the heigth of videos container that may be not accurate in this particular case
+              document.getElementById('hiddenDiv').style.height = initialVideosHeight+50+"px";
             }
           };
             placeholder.innerHTML = phrase;
@@ -188,10 +191,10 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
       }
       if((allCheckboxes[i].checked === false)&&(allCheckboxes[i].name === name)){
         label.innerHTML = textWhenFalse;
+        disableAllVideos(videosDisabled);
         theArray.forEach(elem =>{
           elem.checked = false;
         })
-        disableAllVideos(videosDisabled)
       }
     }
       allCheckedOrUnchecked("All Languages", allLangLabel, "Unselect All Languages", "Select All Languages", allLanguages, "one Language");
@@ -234,11 +237,13 @@ const filterWhenChecked = (theArray, filters) => {
 }
 // Videos aren't clickable when No category selected
 const disableAllVideos = (word) => {
-
 // Div and Text where a message appears when no category selected
-const hiddenDiv = document.getElementById('hiddenDiv');
-const hiddenText = document.getElementById('hiddenText');
+  const hiddenDiv = document.getElementById('hiddenDiv');
+  const hiddenText = document.getElementById('hiddenText');
+  let videosTotalHeight = videos.offsetHeight;
+  videosTotalHeight += 50; // add 50px to the heigth of videos container
   hiddenDiv.style.display = "block";
+  hiddenDiv.style.height = videosTotalHeight+"px"; //hiddenDiv will cover all the videos
   hiddenText.style.visibility = "visible";
   hiddenText.innerHTML = `Choose at least ${word}`;
 }

@@ -58,7 +58,7 @@ function scrollFunction() {
 */
 const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
 // There will be some changes in small screen size
-  const mql = window.matchMedia('(max-width: 800px)');
+  const mql = window.matchMedia('(max-width: 820px)');
   let mobileView = mql.matches;
 // Create an array with all labels
   someData.forEach(elem => {
