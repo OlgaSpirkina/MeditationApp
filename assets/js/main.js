@@ -1,8 +1,13 @@
 // Loading
 const loader = document.querySelector(".loader");
+let theVideoList = document.querySelectorAll('.youtube');
 window.onload = async () => {
   let someData = await fetchVideos;
   if(someData){
+  // display all the videos hidden by default
+    for(let i=0; i<theVideoList.length; i++){
+      theVideoList[i].classList.add('show');
+    }
     setTimeout(function(){
       loader.classList.add("hidden");
     },1500)

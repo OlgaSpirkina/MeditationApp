@@ -193,7 +193,7 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 /* Filter by: button when mobile */
 .mobileButton {
   display: block;
-  background-color: lightgrey;
+  background-color: #b0b0b0;
   padding: 0.5rem;
   color: #fff;
   width: 10rem;

@@ -49,15 +49,48 @@ setTimeout(function(){
       allTopLabel = document.getElementById('allTopLabel');
   let videoList = document.querySelectorAll('.youtube');
 // display all the videos hidden by default
+(()=>{
   for(let i=0; i<videoList.length; i++){
     videoList[i].classList.add('show');
   }
+})();
+/*
+Make first checkbox All Smth of each category be checked/unchecked depending on the state of all other
+chekcboxes of the same category (all checked or all unchecked)
+*/
+let allCheckedOrUncheckedArr = [];
+const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeholder, phrase, disablePhrase) => {
+  anyArr.forEach((elem) => {
+    if(elem.checked === theBool){
+      allCheckedOrUncheckedArr.push(elem);
+    }else{ allCheckedOrUncheckedArr = []; }
+    for(let i=0; i<allCheckedOrUncheckedArr.length; i++){
+      if(allCheckedOrUncheckedArr.length === length){
+        anyArr.forEach((elem) => {
+          if(elem.name === name){
+            elem.checked = theBool;
+            if(elem.checked === false){
+              disableAllVideos(disablePhrase);
+            }
+          };
+            placeholder.innerHTML = phrase;
+        })
+      }
+    }
+  });
+}
 // addEventListener to all checkboxes
   for(let i=0; i<allCheckboxes.length; i++){
     allCheckboxes[i].addEventListener('change', function(){
       if(allCheckboxes[i].checked){
         hiddenDiv.style.display = "none";
         hiddenText.style.visibility = "hidden";
+  // All Smth checkbox is checked when all the other checkboxes of the same category are checked
+        everyCheckboxIsUncheckedOrChecked(allLanguages, true, 2, "All Languages", allLangLabel, "Unselect All Languages");
+        everyCheckboxIsUncheckedOrChecked(allAuthors, true, 5, "All Authors", allAuthLabel, "Unselect All Authors");
+        everyCheckboxIsUncheckedOrChecked(allContents, true, 3, "All Categories", allCatLabel, "Unselect All Categories");
+        everyCheckboxIsUncheckedOrChecked(allDurations, true, 3, "Any duration", anyDurLabel, "Unselect Any Duration");
+        everyCheckboxIsUncheckedOrChecked(allTopics, true, 5, "All Topics", allTopLabel, "Unselect All Topics");
       }
 //A case when All Smth checkbox checked or unchecked
     const allCheckedOrUnchecked = (name, label, textWhenTrue, textWhenFalse, theArray, videosDisabled) => {
@@ -66,6 +99,13 @@ setTimeout(function(){
         theArray.forEach(elem =>{
           elem.checked = true;
         })
+      }
+      if(allCheckboxes[i].checked === false){
+        everyCheckboxIsUncheckedOrChecked(allLanguages, false, 2, "All Languages", allLangLabel, "Select All Languages", "one Language");
+        everyCheckboxIsUncheckedOrChecked(allAuthors, false, 5, "All Authors", allAuthLabel, "Select All Authors", "one Author");
+        everyCheckboxIsUncheckedOrChecked(allContents, false, 3, "All Categories", allCatLabel, "Select All Categories", "one Category");
+        everyCheckboxIsUncheckedOrChecked(allDurations, false, 3, "Any duration", anyDurLabel, "Select Any Duration", "one Duration Parameter");
+        everyCheckboxIsUncheckedOrChecked(allTopics, false, 5, "All Topics", allTopLabel, "Select All Topics", "one Topic");
       }
       if((allCheckboxes[i].checked === false)&&(allCheckboxes[i].name === name)){
         label.innerHTML = textWhenFalse;
@@ -94,7 +134,6 @@ setTimeout(function(){
 },500);
 // Filter based on rel attribute of checkboxes & class of videos
 const filterWhenChecked = (theArray, filters) => {
-  console.log(filters)
   let hiddenElems = [];
   if(!theArray || theArray.length <= 0) return;
   for(let i=0; i<theArray.length; i++){
