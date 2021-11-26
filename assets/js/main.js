@@ -8,6 +8,7 @@ window.onload = async () => {
     },1500)
   };
 }
+
 // Navbar toggle menu
 const toggleButton = document.getElementsByClassName('toggle-button')[0];
 const navbarLinks = document.getElementsByClassName('navbar-links')[0];
@@ -58,7 +59,7 @@ function scrollFunction() {
 */
 const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, allSmthClass, heading) => {
 // There will be some changes in small screen size
-  const mql = window.matchMedia('(max-width: 820px)');
+  const mql = window.matchMedia('(max-width: 920px)');
   let mobileView = mql.matches;
 // Create an array with all labels
   someData.forEach(elem => {
@@ -178,4 +179,9 @@ fetchVideos().catch(error => {
 function goToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+// In Mobile if orientation is changed the page is reloaded
+if (window.DeviceOrientationEvent) {
+  alert(`🌷 Please note that the page will be reloaded when you change the orientation of your device`);
+  window.addEventListener('orientationchange', function() { location.reload(); }, false);
 }
