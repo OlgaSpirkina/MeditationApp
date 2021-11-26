@@ -370,8 +370,12 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   }
 }
 @media all and (min-width: 921px) and (max-width: 1021px) {
+  #formParent legend {
+    width: 9rem;
+  }
   #formParent span {
-    font-size: 0.9rem;
+    width: 11rem;
+    font-size: 0.8rem;
     margin: 0.2rem 0;
   }
 }

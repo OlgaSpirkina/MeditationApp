@@ -182,6 +182,8 @@ function goToTop() {
 }
 // In Mobile if orientation is changed the page is reloaded
 if (window.DeviceOrientationEvent) {
-  alert(`🌷 Please note that the page will be reloaded when you change the orientation of your device`);
-  window.addEventListener('orientationchange', function() { location.reload(); }, false);
+  window.addEventListener('orientationchange', function() {
+    alert(`🌷 Please note that the page will be reloaded when you change the orientation of your device`);
+    location.reload();
+  }, false);
 }

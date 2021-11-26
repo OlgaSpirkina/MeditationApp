@@ -342,8 +342,12 @@ fieldset{
 }
 @media all and (min-width: 921px) and (max-width: 1021px){
   #formParent{
+    legend{
+      width: 9rem;
+    }
     span{
-      font-size: .9rem;
+      width: 11rem;
+      font-size: .8rem;
       margin: .2rem 0;
     }
   }
