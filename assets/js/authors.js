@@ -56,8 +56,10 @@ class Carousel{
     this.items.forEach(item => item.style.width = ((100 / this.slidesVisible) / ratio)+"%")
   }
   createNavigation(){
-    let nextButton = this.createDivWithClass('carousel__next');
-    let prevButton = this.createDivWithClass('carousel__prev');
+    let nextButton = this.createIcon('fas fa-3x fa-chevron-circle-right carousel__next');
+    let prevButton = this.createIcon('fas fa-3x fa-chevron-circle-left carousel__prev');
+    //let nextButton = this.createDivWithClass('carousel__next');
+    //let prevButton = this.createDivWithClass('carousel__prev');
     this.root.appendChild(nextButton);
     this.root.appendChild(prevButton);
 // bind makes a reference to class and not to nextButton
@@ -108,7 +110,7 @@ class Carousel{
     this.moveCallbacks.push(cb);
   }
   onWindowResize(){
-    let mobile = window.innerWidth < 800;
+    let mobile = window.innerWidth < 1000;
     if(mobile !== this.isMobile){
       this.isMobile = mobile;
       this.setStyle();
@@ -127,7 +129,11 @@ class Carousel{
     div.setAttribute('class', className);
     return div;
   }
-
+  createIcon(className){
+    let icon = document.createElement('i');
+    icon.setAttribute('class', className);
+    return icon;
+  }
   /* getter to change the number of slides when mobile */
   get slidesToScroll(){
     return this.isMobile ? 1 : this.options.slidesToScroll;

@@ -1,14 +1,17 @@
 section {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .cards {
+  width: 100%;
   margin: 1rem;
-  width: 35rem;
+  padding: 1rem;
 }
 
 .carousel {
+  width: 95%;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
@@ -30,14 +33,16 @@ section {
 
 .carousel__next,
 .carousel__prev {
+  z-index: 2;
   position: absolute;
   width: 2.5rem;
   height: 2.5rem;
-  background: red;
+  color: var(--mainReddish);
+  text-shadow: 1px 1px 2px var(--navbarGrey);
   border-radius: 50%;
   top: 50%;
   margin-top: -20px;
-  right: 0;
+  right: 10px;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s;
 }
@@ -49,12 +54,22 @@ section {
 
 .carousel__prev {
   right: auto;
-  left: -20px;
+  left: 20px;
 }
 
 .carousel__next-hidden,
 .carousel__prev-hidden {
   opacity: 0;
+}
+
+@media all and (max-width: 1000px) {
+  .carousel__prev {
+    left: 0;
+  }
+
+  .carousel__next {
+    right: 0;
+  }
 }
 
 /*# sourceMappingURL=authors.css.map */
