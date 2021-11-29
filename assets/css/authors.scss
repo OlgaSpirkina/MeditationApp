@@ -1,12 +1,14 @@
+section{
+  width: 95%;
+  margin: 0 auto;
+}
 .cards{
   margin: 1rem;
   width: 35rem;
 }
 .carousel{
   position: relative;
-  /*
   overflow: hidden;
-  */
 }
 .carousel__container{
   transition: transform 0.3s;
