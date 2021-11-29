@@ -8,14 +8,6 @@ window.onload = async () => {
     },1500)
   };
 }
-
-// Navbar toggle menu
-const toggleButton = document.getElementsByClassName('toggle-button')[0];
-const navbarLinks = document.getElementsByClassName('navbar-links')[0];
-toggleButton.addEventListener('click', ()=>{
-  navbarLinks.classList.toggle('active');
-})
-// End Navbar menu
 let checkboxArr = [];
 // Function to create Form & Fieldset to display checkbox filters
 const createFormFieldset = (idParam) => {
