@@ -6,12 +6,21 @@ section{
   width: 100%;
   margin: 1rem;
   padding: 1rem;
+  transition: transform .3s;
+  border-radius: 2rem;
+}
+.cards:hover{
+  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 .carousel{
   width: 95%;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+}
+#carousel1{
+  margin: 0 auto;
 }
 .carousel__container{
   transition: transform 0.3s;
@@ -58,5 +67,8 @@ section{
   }
   .carousel__next{
     right: 0;
+  }
+  .cards{
+    margin: 0;
   }
 }
