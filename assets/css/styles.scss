@@ -250,6 +250,10 @@ fieldset{
     flex-direction: column;
     align-items: flex-start;;
   }
+  .navbar li:hover{
+    background-color: rgba(167, 155, 141, .15);
+    border-radius: 0;
+  }
   .youtube{
     width: 20rem;
     img{

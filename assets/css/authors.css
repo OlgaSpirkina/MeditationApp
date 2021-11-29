@@ -4,7 +4,7 @@ section {
 }
 
 .cards {
-  width: 100%;
+  width: 80%;
   margin: 1rem;
   padding: 1rem;
   transition: transform 0.3s;
@@ -65,7 +65,7 @@ section {
 
 .carousel__prev {
   right: auto;
-  left: 20px;
+  left: 5px;
 }
 
 .carousel__next-hidden,
@@ -74,15 +74,21 @@ section {
 }
 
 @media all and (max-width: 1000px) {
+  .carousel__next:hover,
+.carousel__prev:hover {
+    transform: scale(1.08);
+  }
+
   .carousel__prev {
     left: 0;
   }
 
   .carousel__next {
-    right: 0;
+    right: 10px;
   }
 
   .cards {
+    width: 100%;
     margin: 0;
   }
 }

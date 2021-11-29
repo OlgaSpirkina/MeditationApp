@@ -275,6 +275,11 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
     align-items: flex-start;
   }
 
+  .navbar li:hover {
+    background-color: rgba(167, 155, 141, 0.15);
+    border-radius: 0;
+  }
+
   .youtube {
     width: 20rem;
   }
