@@ -139,13 +139,25 @@ figcaption{
   }
 }
 @media all and (max-width: 1000px){
-  .div-info,
-  .bio{
+  figure{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .hidden-text{
+    font-size: .8rem;
+    margin-left: .2rem;
+  }
+  .div-info{
     width: 100%;
   }
   .bio{
+    width: 95%;
     font-size: 1rem;
     line-height: normal;
+    .bio-paragraphe{
+      width: 80%;
+      margin-top: 2.1rem;
+    }
   }
   .carousel__next:hover,
   .carousel__prev:hover{
