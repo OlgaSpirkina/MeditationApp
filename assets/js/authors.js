@@ -1,3 +1,4 @@
+import authorsBio from "./authorsBio.json";
 class Carousel{
   /**
   @callback moveCallbacks
@@ -140,8 +141,10 @@ class Carousel{
     return this.isMobile ? 1 : this.options.slidesVisible;
   }
 }
-
+// End Class Carousel
+//
 document.addEventListener('DOMContentLoaded', function(){
+  console.log(authorsBio);
   new Carousel(document.querySelector('#carousel1'),{
     slidesToScroll: 1,
     slidesVisible: 3,
@@ -163,12 +166,17 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   let infoIcon = document.querySelectorAll('.fa-info-circle');
   let divInfoText = document.querySelectorAll('.hidden-text');
+  let cards = document.querySelectorAll('.cards');
   for(let j=0; j<infoIcon.length; j++){
     infoIcon[j].addEventListener('click', function(){
       for(let a=0; a<divInfoText.length; a++){
-        if(j === a){
-          divInfoText[a].classList.toggle('show-text');
-        //  divInfoIcon[a].removeChild(text);
+        for(let b=0; b<cards.length; b++){
+          if((j === a) && (j === b) && (a === b)){
+            let authorName = cards[b].getAttribute('alt');
+            divInfoText[a].innerHTML = `know more about ${authorName}`;
+            divInfoText[a].classList.toggle('show-text');
+          //  divInfoIcon[a].removeChild(text);
+          }
         }
       }
     })

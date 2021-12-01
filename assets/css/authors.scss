@@ -20,9 +20,12 @@ figure{
 }
 figcaption{
   z-index: 2;
+  a{
+    color: var(--mainReddish);
+  }
 }
 .fa-info-circle{
-  color: yellow;
+  color: var(--theYellow);
   cursor: pointer;
   z-index: 99;
 }
@@ -87,11 +90,25 @@ figcaption{
 }
 .hidden-text{
   display: none;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--navbarGrey);
+  border-radius: .5rem;
+  margin-left: .7rem;
+  padding: .3rem;
 }
 .show-text{
   display: block;
 }
+@media all and (min-width: 800px) and (max-width: 850px){
+  .div-info{
+    bottom: 5.4rem;
+  }
+}
 @media all and (max-width: 1000px){
+  .div-info{
+    width: 100%;
+  }
   .carousel__next:hover,
   .carousel__prev:hover{
     transform: scale(1.08);
