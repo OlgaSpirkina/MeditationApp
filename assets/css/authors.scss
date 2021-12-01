@@ -28,6 +28,10 @@ figcaption{
   color: var(--theYellow);
   cursor: pointer;
   z-index: 99;
+  &:hover{
+    transform: scale(1.05);
+    filter: brightness(1.05);
+  }
 }
 .div-info{
   width: 80%;
@@ -94,8 +98,37 @@ figcaption{
   color: #fff;
   background-color: var(--navbarGrey);
   border-radius: .5rem;
+  margin: 0;
   margin-left: .7rem;
   padding: .3rem;
+}
+
+.bio{
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: .5rem;
+  color: #fff;
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 2;
+  .icon-close{
+    display: none;
+    position:absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+    border-radius: .2rem;
+    color: var(--theYellow);
+    &:hover{
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+  }
+  .bio-paragraphe{
+    width: 90%;
+    margin: .5rem auto;
+  }
 }
 .show-text{
   display: block;
@@ -106,8 +139,13 @@ figcaption{
   }
 }
 @media all and (max-width: 1000px){
-  .div-info{
+  .div-info,
+  .bio{
     width: 100%;
+  }
+  .bio{
+    font-size: 1rem;
+    line-height: normal;
   }
   .carousel__next:hover,
   .carousel__prev:hover{

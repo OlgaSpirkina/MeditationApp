@@ -33,6 +33,10 @@ figcaption a {
   cursor: pointer;
   z-index: 99;
 }
+.fa-info-circle:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
 
 .div-info {
   width: 80%;
@@ -110,8 +114,37 @@ figcaption a {
   color: #fff;
   background-color: var(--navbarGrey);
   border-radius: 0.5rem;
+  margin: 0;
   margin-left: 0.7rem;
   padding: 0.3rem;
+}
+
+.bio {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+.bio .icon-close {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  color: var(--theYellow);
+}
+.bio .icon-close:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+.bio .bio-paragraphe {
+  width: 90%;
+  margin: 0.5rem auto;
 }
 
 .show-text {
@@ -124,8 +157,14 @@ figcaption a {
   }
 }
 @media all and (max-width: 1000px) {
-  .div-info {
+  .div-info,
+.bio {
     width: 100%;
+  }
+
+  .bio {
+    font-size: 1rem;
+    line-height: normal;
   }
 
   .carousel__next:hover,

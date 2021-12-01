@@ -145,6 +145,10 @@ class Carousel{
 //
 document.addEventListener('DOMContentLoaded', function(){
   let authorsBio;
+  let bioSection = document.getElementsByClassName('bio')[0];
+  let bioParagraphe = document.getElementsByClassName('bio-paragraphe')[0];
+  let closingIcon = document.createElement('i');
+  closingIcon.setAttribute('class', 'far fa-2x fa-window-close icon-close');
   fetch("https://raw.githubusercontent.com/OlgaSpirkina/MeditationApp/main/authorsBio.json")
   .then(response => {
      return response.json();
@@ -180,14 +184,23 @@ document.addEventListener('DOMContentLoaded', function(){
           if((j === a) && (j === b) && (a === b)){
             let authorName = cards[b].getAttribute('alt');
             divInfoText[a].innerHTML = `know more about ${authorName}`;
-            divInfoText[a].classList.toggle('show-text');
+            divInfoText[a].classList.add('show-text');
+            setTimeout(function(){ divInfoText[a].classList.remove('show-text'); }, 2000);
+            //document.getElementsByClassName('bio')[0].classList.toggle('show-text');
             console.log(typeof authorsBio)
             authorsBio.forEach((author) => {
               if(author.name === authorName){
-                document.getElementById("bio").innerHTML = author.bio;
+                bioParagraphe.innerHTML = author.bio;
+                bioSection.appendChild(closingIcon);
+                bioSection.style.border = "1px solid #fff";
+                let closingIconElem = document.querySelectorAll('.icon-close')[0];
+                closingIconElem.style.display = "block";
+                closingIconElem.addEventListener('click', function(){
+                  bioSection.style.display = "none";
+                })
+                bioSection.style.display = "block";
               }
             })
-          //  divInfoIcon[a].removeChild(text);
           }
         }
       }
