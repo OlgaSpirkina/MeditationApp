@@ -58,10 +58,8 @@ class Carousel{
   createNavigation(){
     let nextButton = this.createIcon('fas fa-3x fa-chevron-circle-right carousel__next');
     let prevButton = this.createIcon('fas fa-3x fa-chevron-circle-left carousel__prev');
-    //let nextButton = this.createDivWithClass('carousel__next');
-    //let prevButton = this.createDivWithClass('carousel__prev');
-    this.root.appendChild(nextButton);
-    this.root.appendChild(prevButton);
+    this.element.appendChild(nextButton);
+    this.element.appendChild(prevButton);
 // bind makes a reference to class and not to nextButton
     nextButton.addEventListener('click', this.next.bind(this));
     prevButton.addEventListener('click', this.prev.bind(this));
@@ -148,5 +146,31 @@ document.addEventListener('DOMContentLoaded', function(){
     slidesToScroll: 1,
     slidesVisible: 3,
     loop: true
-  })
+  });
+  let carouselItem = document.querySelectorAll('figure');
+  for(let i=0; i<carouselItem.length; i++){
+    let divIcon = document.createElement('div');
+    let icon = document.createElement('i');
+    let infoText = document.createElement('p');
+    let textNode = document.createTextNode('hello here');
+    infoText.setAttribute('class', 'hidden-text');
+    divIcon.setAttribute('class', 'div-info');
+    icon.setAttribute('class', 'fas fa-2x fa-info-circle');
+    divIcon.appendChild(icon);
+    divIcon.appendChild(infoText);
+    infoText.appendChild(textNode);
+    carouselItem[i].appendChild(divIcon);
+  }
+  let infoIcon = document.querySelectorAll('.fa-info-circle');
+  let divInfoText = document.querySelectorAll('.hidden-text');
+  for(let j=0; j<infoIcon.length; j++){
+    infoIcon[j].addEventListener('click', function(){
+      for(let a=0; a<divInfoText.length; a++){
+        if(j === a){
+          divInfoText[a].classList.toggle('show-text');
+        //  divInfoIcon[a].removeChild(text);
+        }
+      }
+    })
+  }
 })

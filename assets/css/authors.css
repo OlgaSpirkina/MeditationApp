@@ -3,17 +3,46 @@ section {
   margin: 0 auto;
 }
 
-.cards {
-  width: 80%;
+figure {
   margin: 1rem;
   padding: 1rem;
+}
+
+.cards {
+  width: 80%;
+  margin: 0;
+  padding: 0;
   transition: transform 0.3s;
   border-radius: 2rem;
 }
 
 .cards:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   filter: brightness(1.05);
+}
+
+figcaption {
+  z-index: 2;
+}
+
+.fa-info-circle {
+  color: yellow;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.div-info {
+  width: 80%;
+  display: flex;
+  position: relative;
+  bottom: 4rem;
+  left: 0.5rem;
+  z-index: 11;
+  float: left;
+}
+
+.learn-more {
+  width: 20rem;
 }
 
 .carousel {
@@ -44,15 +73,14 @@ section {
 
 .carousel__next,
 .carousel__prev {
-  z-index: 2;
+  z-index: 99;
   position: absolute;
   width: 2.5rem;
   height: 2.5rem;
   color: var(--mainReddish);
   text-shadow: 1px 1px 2px var(--navbarGrey);
   border-radius: 50%;
-  top: 50%;
-  margin-top: -20px;
+  top: 35%;
   right: 10px;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s;
@@ -60,7 +88,7 @@ section {
 
 .carousel__next:hover,
 .carousel__prev:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .carousel__prev {
@@ -71,6 +99,14 @@ section {
 .carousel__next-hidden,
 .carousel__prev-hidden {
   opacity: 0;
+}
+
+.hidden-text {
+  display: none;
+}
+
+.show-text {
+  display: block;
 }
 
 @media all and (max-width: 1000px) {
@@ -90,6 +126,36 @@ section {
   .cards {
     width: 100%;
     margin: 0;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 550px) {
+  .carousel__next,
+.carousel__prev {
+    top: 40%;
+  }
+}
+@media all and (min-width: 551px) and (max-width: 799px) {
+  .carousel__next,
+.carousel__prev {
+    top: 45%;
+  }
+}
+@media all and (min-width: 800px) and (max-width: 1200px) {
+  .carousel__next,
+.carousel__prev {
+    top: 25%;
+  }
+}
+@media all and (min-width: 1201px) and (max-width: 1460px) {
+  .carousel__next,
+.carousel__prev {
+    top: 30%;
+  }
+}
+@media all and (min-width: 1461px) {
+  .carousel__next,
+.carousel__prev {
+    top: 40%;
   }
 }
 
