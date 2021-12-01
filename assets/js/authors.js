@@ -144,11 +144,13 @@ class Carousel{
 // End Class Carousel
 //
 document.addEventListener('DOMContentLoaded', function(){
+  let authorsBio;
   fetch("https://raw.githubusercontent.com/OlgaSpirkina/MeditationApp/main/authorsBio.json")
   .then(response => {
      return response.json();
   })
-  .then(data => console.log(data));
+  .then(data => { authorsBio = data });
+  console.log(authorsBio);
   new Carousel(document.querySelector('#carousel1'),{
     slidesToScroll: 1,
     slidesVisible: 3,
@@ -179,6 +181,12 @@ document.addEventListener('DOMContentLoaded', function(){
             let authorName = cards[b].getAttribute('alt');
             divInfoText[a].innerHTML = `know more about ${authorName}`;
             divInfoText[a].classList.toggle('show-text');
+            console.log(typeof authorsBio)
+            authorsBio.forEach((author) => {
+              if(author.name === authorName){
+                document.getElementById("bio").innerHTML = author.bio;
+              }
+            })
           //  divInfoIcon[a].removeChild(text);
           }
         }
