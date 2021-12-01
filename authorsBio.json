@@ -1,22 +1,24 @@
-"authorsBio" : [
-  {
-    "name":"Richard J.Davidson",
-    "bio":"Richard J. Davidson (born December 12, 1951) is professor of psychology and psychiatry at the University of Wisconsin–Madison as well as founder and chair of the Center for Healthy Minds. Davidson has been a longtime friend of the 14th Dalai Lama, and some of his work involves research on the brain as it relates to meditation.[7] Davidson has long maintained his own daily meditation practice, and continues to communicate regularly with the Dalai Lama.",
-    "wiki":"https://en.wikipedia.org/wiki/Richard_Davidson"
-  },
-  {
-    "name":"Andy Puddicombe",
-    "bio":"Andy Puddicombe (born 23 September 1972) is a British author, public speaker and a teacher of meditation and mindfulness. He, alongside Richard Pierson,[1] is the co-founder of Headspace, a digital health company that provides guided meditation training and mindfulness for its users. Puddicombe is a former Buddhist monk with a degree in Circus Arts. ",
-    "wiki":"https://en.wikipedia.org/wiki/Andy_Puddicombe"
-  },
-  {
-    "name":"John Kabat Zinn",
-    "bio":"Jon Kabat-Zinn (born Jon Kabat, June 5, 1944) is an American professor emeritus of medicine and the creator of the Stress Reduction Clinic and the Center for Mindfulness in Medicine, Health Care, and Society at the University of Massachusetts Medical School. Kabat-Zinn was a student of Zen Buddhist teachers such as Philip Kapleau, Thich Nhat Hanh and Seung Sahn and a founding member of Cambridge Zen Center. His practice of yoga and studies with Buddhist teachers led him to integrate their teachings with scientific findings. He teaches mindfulness, which he says can help people cope with stress, anxiety, pain, and illness. The stress reduction program created by Kabat-Zinn, mindfulness-based stress reduction (MBSR), is offered by medical centers, hospitals, and health maintenance organizations, and is described in his book Full Catastrophe Living.",
-    "wiki":"https://en.wikipedia.org/wiki/Jon_Kabat-Zinn"
-  },
-  {
-    "name":"Christophe André",
-    "bio":"Christophe André, né le 12 juin 1956 à Montpellier, est un psychiatre et psychothérapeute français. Christophe André est l’un des chefs de file des thérapies comportementales et cognitives en France, et a été l’un des premiers à y introduire l’usage de la méditation de pleine conscience en psychothérapie.",
-    "wiki":"https://fr.wikipedia.org/wiki/Christophe_Andr%C3%A9"
-  }
-   ]
+{
+  "authorsBio" : [
+    {
+      "name":"Richard J.Davidson",
+      "bio":"Richard J. Davidson (born December 12, 1951) is professor of psychology and psychiatry at the University of Wisconsin–Madison as well as founder and chair of the Center for Healthy Minds. Davidson has been a longtime friend of the 14th Dalai Lama, and some of his work involves research on the brain as it relates to meditation.[7] Davidson has long maintained his own daily meditation practice, and continues to communicate regularly with the Dalai Lama.",
+      "wiki":"https://en.wikipedia.org/wiki/Richard_Davidson"
+    },
+    {
+      "name":"Andy Puddicombe",
+      "bio":"Andy Puddicombe (born 23 September 1972) is a British author, public speaker and a teacher of meditation and mindfulness. He, alongside Richard Pierson,[1] is the co-founder of Headspace, a digital health company that provides guided meditation training and mindfulness for its users. Puddicombe is a former Buddhist monk with a degree in Circus Arts. ",
+      "wiki":"https://en.wikipedia.org/wiki/Andy_Puddicombe"
+    },
+    {
+      "name":"John Kabat Zinn",
+      "bio":"Jon Kabat-Zinn (born Jon Kabat, June 5, 1944) is an American professor emeritus of medicine and the creator of the Stress Reduction Clinic and the Center for Mindfulness in Medicine, Health Care, and Society at the University of Massachusetts Medical School. Kabat-Zinn was a student of Zen Buddhist teachers such as Philip Kapleau, Thich Nhat Hanh and Seung Sahn and a founding member of Cambridge Zen Center. His practice of yoga and studies with Buddhist teachers led him to integrate their teachings with scientific findings. He teaches mindfulness, which he says can help people cope with stress, anxiety, pain, and illness. The stress reduction program created by Kabat-Zinn, mindfulness-based stress reduction (MBSR), is offered by medical centers, hospitals, and health maintenance organizations, and is described in his book Full Catastrophe Living.",
+      "wiki":"https://en.wikipedia.org/wiki/Jon_Kabat-Zinn"
+    },
+    {
+      "name":"Christophe André",
+      "bio":"Christophe André, né le 12 juin 1956 à Montpellier, est un psychiatre et psychothérapeute français. Christophe André est l’un des chefs de file des thérapies comportementales et cognitives en France, et a été l’un des premiers à y introduire l’usage de la méditation de pleine conscience en psychothérapie.",
+      "wiki":"https://fr.wikipedia.org/wiki/Christophe_Andr%C3%A9"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import authorsBio from "./authorsBio.json";
+//import authorsBio from "https://github.com/OlgaSpirkina/MeditationApp/blob/main/authorsBio.json";
 class Carousel{
   /**
   @callback moveCallbacks
@@ -144,7 +144,11 @@ class Carousel{
 // End Class Carousel
 //
 document.addEventListener('DOMContentLoaded', function(){
-  console.log(authorsBio);
+  fetch("https://raw.githubusercontent.com/OlgaSpirkina/MeditationApp/main/authorsBio.json")
+  .then(response => {
+     return response.json();
+  })
+  .then(data => console.log(data));
   new Carousel(document.querySelector('#carousel1'),{
     slidesToScroll: 1,
     slidesVisible: 3,
