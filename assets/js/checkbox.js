@@ -151,9 +151,12 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
             elem.checked = theBool;
             if(elem.checked === false){
               disableAllVideos(disablePhrase);
-              console.log(initialVideosHeight)
+              //console.log(initialVideosHeight)
 // add a height to cover div because if not it takes the heigth of videos container that may be not accurate in this particular case
-              document.getElementById('hiddenDiv').style.height = initialVideosHeight+50+"px";
+              //document.getElementById('hiddenDiv').style.height = initialVideosHeight+50+"px";
+              //if (window.DeviceOrientationEvent) {
+
+              //}
             }
           };
             placeholder.innerHTML = phrase;
@@ -162,6 +165,8 @@ const everyCheckboxIsUncheckedOrChecked = (anyArr, theBool, length, name, placeh
     }
   });
 }
+
+
 // addEventListener to all checkboxes
   for(let i=0; i<allCheckboxes.length; i++){
     allCheckboxes[i].addEventListener('change', function(){
@@ -238,16 +243,27 @@ const filterWhenChecked = (theArray, filters) => {
 }
 // Videos aren't clickable when No category selected
 const disableAllVideos = (word) => {
+  const mql = window.matchMedia('(max-width: 920px)');
+  let mobile = mql.matches;
 // Div and Text where a message appears when no category selected
   const hiddenDiv = document.getElementById('hiddenDiv');
   const hiddenText = document.getElementById('hiddenText');
-  let videosTotalHeight = videos.offsetHeight;
-  console.log(videosTotalHeight, "total height")
-  videosTotalHeight += 50; // add 50px to the heigth of videos container
   hiddenDiv.style.display = "block";
-  hiddenDiv.style.height = videosTotalHeight+"px"; //hiddenDiv will cover all the videos
   hiddenText.style.visibility = "visible";
   hiddenText.innerHTML = `Choose at least ${word}`;
+  if(mobile){
+    if(window.innerWidth > window.innerHeight){
+      document.getElementById('hiddenDiv').style.height = "650px";
+    }
+    if(window.innerWidth < window.innerHeight){
+      document.getElementById('hiddenDiv').style.height = "1600px";
+    }
+  }
+  else{
+    let videosTotalHeight = videos.offsetHeight;
+    videosTotalHeight += 50; // add 50px to the heigth of videos container
+    hiddenDiv.style.height = videosTotalHeight+"px"; //hiddenDiv will cover all the
+  }
 }
 // Add pagination. JQuery plugin
 function show(maxVideosPerPage) {
@@ -266,3 +282,16 @@ function show(maxVideosPerPage) {
     }
   })
 }
+
+window.addEventListener('orientationchange', function() {
+  if (window.matchMedia("(orientation: portrait)").matches) {
+
+      document.getElementById('hiddenDiv').style.height = "650px";
+
+  }
+  if (window.matchMedia("(orientation: landscape)").matches) {
+
+      document.getElementById('hiddenDiv').style.height = "1600px";
+    
+  }
+})

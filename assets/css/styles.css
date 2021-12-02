@@ -222,7 +222,7 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   position: absolute;
   display: none;
   width: 100%;
-  min-height: 100px;
+  min-height: 600px;
   z-index: 99;
   background-color: var(--lightGrey);
   opacity: 0.4;
@@ -381,6 +381,16 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
   }
   #formParent span {
     width: 11rem;
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+  }
+}
+@media all and (min-width: 1022px) and (max-width: 1699px) {
+  #formParent legend {
+    width: 9rem;
+  }
+  #formParent span {
+    width: 13rem;
     font-size: 0.8rem;
     margin: 0.2rem 0;
   }

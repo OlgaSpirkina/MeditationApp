@@ -151,9 +151,11 @@ fetchVideos().catch(error => {
   error.message;
 });
 // In Mobile if orientation is changed the page is reloaded
+/*
 if (window.DeviceOrientationEvent) {
   window.addEventListener('orientationchange', function() {
     alert(`🌷 Please note that the page will be reloaded when you change the orientation of your device`);
     location.reload();
   }, false);
 }
+*/
