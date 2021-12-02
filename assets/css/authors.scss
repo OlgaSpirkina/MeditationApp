@@ -37,8 +37,8 @@ figcaption{
   width: 80%;
   display: flex;
   position: relative;
-  bottom: 4rem;
-  left: .5rem;
+  bottom: 6rem;
+  left: 6rem;
   z-index: 11;
   float: left;
 }
@@ -75,7 +75,7 @@ figcaption{
   color: var(--mainReddish);
   text-shadow: 1px 1px 2px var(--navbarGrey);
   border-radius: 50%;
-  top: 35%;
+  top: 65%;
   right: 10px;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s;
@@ -108,37 +108,84 @@ figcaption{
   width: 80%;
   margin: 0 auto;
   border-radius: .5rem;
-  color: #fff;
   text-align: justify;
   font-size: 1.2rem;
   line-height: 2;
+  .bio-paragraphe{
+    width: 90%;
+    color: #fff;
+    margin: .5rem auto;
+
+  }
   .icon-close{
     display: none;
     position:absolute;
     top: 0;
     right: 0;
-    padding: .5rem;
-    border-radius: .2rem;
+    padding: .2rem;
     color: var(--theYellow);
+    border-radius: .5rem;
     &:hover{
       transform: scale(1.05);
       filter: brightness(1.05);
+      color: var(--theYellow);
     }
-  }
-  .bio-paragraphe{
-    width: 90%;
-    margin: .5rem auto;
   }
 }
 .show-text{
   display: block;
 }
+
+@media all and (min-width: 500px) and (max-width: 550px){
+  .carousel__next,
+  .carousel__prev{
+    top: 65%;
+  }
+}
+@media all and (min-width: 551px) and (max-width: 799px){
+  .carousel__next,
+  .carousel__prev{
+    top: 70%;
+  }
+}
 @media all and (min-width: 800px) and (max-width: 850px){
   .div-info{
-    bottom: 5.4rem;
+    left: 2.5rem;
+    bottom: 3.9rem;
+  }
+  figcaption{
+    font-size: .9rem;
+  }
+}
+@media all and (min-width: 851px) and (max-width: 999px){
+  .div-info{
+    left: 2.5rem;
+    bottom: 4rem;
+  }
+}
+@media all and (min-width: 1000px) and (max-width: 1400px){
+  .div-info{
+    left: 4.5rem;
+  }
+  .hidden-text{
+    font-size: .75rem;
+    margin-left: .1rem;
+  }
+}
+@media all and (min-width: 800px) and (max-width: 1200px){
+  .carousel__next,
+  .carousel__prev{
+    top: 40%;
   }
 }
 @media all and (max-width: 1000px){
+  .bio-p{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: 1rem;
+  }
   figure{
     margin-bottom: 0;
     padding-bottom: 0;
@@ -154,10 +201,10 @@ figcaption{
     width: 95%;
     font-size: 1rem;
     line-height: normal;
-    .bio-paragraphe{
-      width: 80%;
-      margin-top: 2.1rem;
-    }
+  }
+  .bio-paragraphe{
+    width: 80%;
+    margin-top: 2.1rem;
   }
   .carousel__next:hover,
   .carousel__prev:hover{
@@ -174,33 +221,59 @@ figcaption{
     margin: 0;
   }
 }
-@media all and (min-width: 500px) and (max-width: 550px){
-  .carousel__next,
-  .carousel__prev{
-    top: 40%;
-  }
-}
-@media all and (min-width: 551px) and (max-width: 799px){
-  .carousel__next,
-  .carousel__prev{
-    top: 45%;
-  }
-}
-@media all and (min-width: 800px) and (max-width: 1200px){
-  .carousel__next,
-  .carousel__prev{
-    top: 25%;
-  }
-}
 @media all and (min-width: 1201px) and (max-width: 1460px){
   .carousel__next,
   .carousel__prev{
-    top: 30%;
+    top: 50%;
   }
 }
 @media all and (min-width: 1461px){
   .carousel__next,
   .carousel__prev{
-    top: 40%;
+    top: 55%;
   }
+}
+/* ----------- iPad ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-width: 810px)
+  and (max-height: 1080px)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .carousel__next,
+    .carousel__prev{
+      top: 32%;
+    }
+}
+/* Landscape */
+@media only screen
+  and (min-width: 810px)
+  and (max-height: 1080px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .carousel__next,
+    .carousel__prev{
+      top: 55%;
+    }
+}
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .carousel__next,
+    .carousel__prev{
+      top: 28%;
+    }
+}
+/* Landscape */
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .carousel__next,
+    .carousel__prev{
+      top: 42%;
+    }
 }
