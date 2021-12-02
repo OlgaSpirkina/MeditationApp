@@ -158,7 +158,7 @@ window.onload = async () => {
 }
 // Get the data: authors' biography
 async function fetchAuthorsBio(){
-  const res = await fetch('https://raw.githubusercontent.com/OlgaSpirkina/MeditationApp/main/authorsBio.json');
+  const res = await fetch('https://my-json-server.typicode.com/OlgaSpirkina/MeditationApp/authorsBio');
   if (!res.ok) {
     const message = `An error has occured: ${response.status}`;
     throw new Error(message);

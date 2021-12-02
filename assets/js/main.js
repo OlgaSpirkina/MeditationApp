@@ -133,7 +133,7 @@ const displayModal = (link, name, description) => {
 }
 // Fetching data
 async function fetchVideos(){
-  const res = await fetch('https://my-json-server.typicode.com/OlgaSpirkina/MeditationApp/videos');
+  const res = await fetch('https://raw.githubusercontent.com/OlgaSpirkina/MeditationApp/main/videos.json');
   if (!res.ok) {
     const message = `An error has occured: ${response.status}`;
     throw new Error(message);
