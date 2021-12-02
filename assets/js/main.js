@@ -33,19 +33,7 @@ const languageForm = createFormFieldset('language'),
       videos = document.getElementById('videos'),
 // Variables for all Forms wrapper and filterBy used for mobile screen size to hide or show checkbox filters
       wrapperFormParent = document.getElementById('wrapperFormParent'),
-      filterBy = document.getElementById('filterBy'),
-      upArrowContainer = document.getElementById("upArrowContainer");
-/*
-  Detect Scroll Down in mobile
-*/
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    upArrowContainer.style.display = "block";
-  } else {
-    upArrowContainer.style.display = "none";
-  }
-}
-// End Detect Scroll Down Function
+      filterBy = document.getElementById('filterBy');
 /*
   Create Checkbox filters
 */
@@ -87,9 +75,6 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
   .join('');
   // If small screen size
   if(mobileView){
-    // Detect scroll down
-    window.onscroll = function() {scrollFunction()};
-    upArrowContainer.addEventListener('click', goToTop);
     const filterByClass = ['mobileButton', 'btn', 'rounded-pill'];
     for(let i=0; i<filterByClass.length; i++){
       filterBy.classList.add(filterByClass[i]);
@@ -165,13 +150,6 @@ async function fetchVideos(){
 fetchVideos().catch(error => {
   error.message;
 });
-
-
-// When the user clicks on the button, scroll to the top of the document
-function goToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
 // In Mobile if orientation is changed the page is reloaded
 if (window.DeviceOrientationEvent) {
   window.addEventListener('orientationchange', function() {

@@ -135,12 +135,12 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 /* when scroll down there is an arrow up  */
-#upArrow {
+.upArrow {
   color: var(--mainReddish);
   padding: 0.1rem;
 }
 
-#upArrowContainer {
+.upArrowContainer {
   display: none;
   position: fixed;
   bottom: 1rem;

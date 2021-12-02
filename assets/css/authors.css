@@ -152,10 +152,16 @@ figcaption a {
   display: block;
 }
 
+@media all and (max-width: 499px) {
+  .carousel__next,
+.carousel__prev {
+    top: 75%;
+  }
+}
 @media all and (min-width: 500px) and (max-width: 550px) {
   .carousel__next,
 .carousel__prev {
-    top: 65%;
+    top: 70%;
   }
 }
 @media all and (min-width: 551px) and (max-width: 799px) {

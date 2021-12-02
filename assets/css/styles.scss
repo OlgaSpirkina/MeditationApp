@@ -125,11 +125,11 @@ fieldset{
   }
 }
 /* when scroll down there is an arrow up  */
-#upArrow{
+.upArrow{
   color: var(--mainReddish);
   padding: .1rem;
 }
-#upArrowContainer{
+.upArrowContainer{
   display: none;
   position: fixed;
   bottom: 1rem;
