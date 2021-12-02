@@ -1,137 +1,24 @@
 {
-  "videos": [
+  "authorsBio": [
     {
-      "name": "Se détacher des pensées par Christophe André",
-      "classes": ["French", "Christophe_André", "Meditation", "Medium", "Thoughts"],
-      "link": "bXKKhOadDu8",
-      "duration": "11.42",
-      "description": "some description comes later"
+      "name":"Richard J.Davidson",
+      "bio":"Richard J. Davidson (born December 12, 1951) is professor of psychology and psychiatry at the University of Wisconsin–Madison as well as founder and chair of the Center for Healthy Minds. Davidson has been a longtime friend of the 14th Dalai Lama, and some of his work involves research on the brain as it relates to meditation. Davidson has long maintained his own daily meditation practice, and continues to communicate regularly with the Dalai Lama.",
+      "wiki":"https://en.wikipedia.org/wiki/Richard_Davidson"
     },
     {
-      "name": "Les personnalités toxiques - La chronique de Christophe André",
-      "classes": ["French", "Christophe_André", "Tips", "Short", "Daily_Life"],
-      "link": "AeCi-oFVdPs",
-      "duration": "4.24",
-      "description": "some description comes later"
+      "name":"Andy Puddicombe",
+      "bio":"Andy Puddicombe (born 23 September 1972) is a British author, public speaker and a teacher of meditation and mindfulness. He, alongside Richard Pierson, is the co-founder of Headspace, a digital health company that provides guided meditation training and mindfulness for its users. Puddicombe is a former Buddhist monk with a degree in Circus Arts.",
+      "wiki":"https://en.wikipedia.org/wiki/Andy_Puddicombe"
     },
     {
-      "name": "MEDITACIÓN GUIADA PROFUNDA - 30 minutos con cuencos tibetanos voz femenina en castellano",
-      "classes": ["Spanish", "Other_Authors", "Meditation", "Long", "Reset"],
-      "link": "80DcgG-3vBE",
-      "duration": "27.35",
-      "description": "Hoy nos sumergimos en el océano de la consciencia acompañados de un viaje sonoro que vibra acorde a un estado profundo meditativo. Ponte cómodo, cierra tus ojos, busca tu espacio de calma y déjate llevar por esta meditación guiada de 30 minutos en la que te llevo hasta la relajación total de tu cuerpo y la lucidez plena de tu espíritu."
+      "name":"John Kabat Zinn",
+      "bio":"Jon Kabat-Zinn (born Jon Kabat, June 5, 1944) is an American professor emeritus of medicine and the creator of the Stress Reduction Clinic and the Center for Mindfulness in Medicine, Health Care, and Society at the University of Massachusetts Medical School. Kabat-Zinn was a student of Zen Buddhist teachers such as Philip Kapleau, Thich Nhat Hanh and Seung Sahn and a founding member of Cambridge Zen Center. His practice of yoga and studies with Buddhist teachers led him t o integrate their teachings with scientific findings. He teaches mindfulness, which he says can help people cope with stress, anxiety, pain, and illness. The stress reduction program created by Kabat-Zinn, mindfulness-based stress reduction (MBSR), is offered by medical centers, hospitals, and health maintenance organizations, and is described in his book Full Catastrophe Living.",
+      "wiki":"https://en.wikipedia.org/wiki/Jon_Kabat-Zinn"
     },
     {
-      "name": "Exploring Life`s Biggest Questions with Andy Puddicombe: Why Meditate?",
-      "classes": ["English", "Andy_Puddicombe", "Tips", "Long", "Daily_Life"],
-      "link": "8XItP4XVbIA",
-      "duration": "26.21",
-      "description": "In this episode Headspace co-founder, Andy Puddicombe-world-renowned expert on meditation and a former Buddhist monk- heads to Utah for a short hike around Lake Powell and a discussion about the purpose of meditation."
-    },
-    {
-      "name": "Reset: Decompress Your Body and Mind by Andy Puddicombe",
-      "classes": ["English", "Andy_Puddicombe", "Meditation", "Medium", "Reset"],
-      "link": "QHkXvPq2pQE",
-      "duration": "10.07",
-      "description": " This meditation encourages us to pause and reset between tasks, helping you feel more present and better able to enjoy whatever comes next."
-    },
-    {
-      "name": "All it takes is 10 mindful minutes by Andy Puddicombe",
-      "classes": ["English", "Andy_Puddicombe", "Ted_Talk", "Medium", "Daily_Life"],
-      "link": "qzR62JJCMBQ",
-      "duration": "9.24",
-      "description": "When is the last time you did absolutely nothing for 10 whole minutes? Not texting, talking or even thinking? Mindfulness expert Andy Puddicombe describes the transformative power of doing just that: Refreshing your mind for 10 minutes a day, simply by being mindful and experiencing the present moment. (No need for incense or sitting in strange positions.)"
-    },
-    {
-      "name": "How mindfulness changes the emotional life of our brains by Richard J. Davidson | TEDxSanFrancisco",
-      "classes": ["English", "Richard_J.Davidson", "Ted_Talk", "Medium", "Mindfulness"],
-      "link": "7CBfCW67xT8",
-      "duration": "17.52",
-      "description": "Why is it that some people are more vulnerable to life`s slings and arrows and others more resilient? In this eye-opening talk, Richard Davidson discusses how mindfulness can improve well-being and outlines strategies to boost four components of a healthy mind: awareness, connection, insight, and purpose. Richard Davidson is researching how mindfulness changes the emotional life of our brains and what we know about people`s brains of individuals showing more resilienc than others. Davidson is Wiliam James and Vilas professor of psychology and psychiatry at the University of Wisconsin-Madison as well as founder and director of the Center for Healthy Minds."
-    },
-    {
-      "name": "La méditation de pleine conscience par Inken Dechow & Dominique Retoux | TEDxUniversitéParisDauphine",
-      "classes": ["French", "Other_Authors", "Ted_Talk", "Long", "Daily_Life"],
-      "link": "VEvMxIhXL0E",
-      "duration": "19.10",
-      "description": "Dans ce talk, Inken Dechow et Dominique Retoux, qui ont suivi la prestigieuse formation de méditation de pleine conscience du professeur émérite Jon Kabat-Zinn à l`Université du Massachusetts, nous accompagnent dans notre recherche d`équilibre à travers une initiation à la méditation. Iken Dechow, ancienne Dauphinoise et ingénieure de formation, a travaillé durant quinze années aux achats pour le groupe L`Oréal. Dominique Retoux a lui collaboré pendant huit ans avec Médecins Sans Frontières avant de lancer son projet de start-up. Tous deux sont maintenant instructeurs pour Mind, l`application de méditation."
-    },
-    {
-      "name": "10 MIN GUIDED MINDFULNESS MEDITATION - JON KABAT ZINN",
-      "classes": ["English", "Jon_Kabat_Zinn", "Meditation", "Medium", "Mindfulness"],
-      "link": "2GjZanuXWWk",
-      "duration": "10.02",
-      "description": "some description comes later"
-    },
-    {
-      "name": "Meditación en Español en 10 Minutos",
-      "classes": ["Spanish", "Other_Authors", "Meditation", "Short", "Reset"],
-      "link": "N3W1jWcpIBs",
-      "duration": "10.15",
-      "description": "Disfruta esta sesión de meditación en 5 minutos, ¡creada especialmente para vosotros! Aprende cómo experimentar paz y reducir el estrés. No necesitas mucho tiempo, solo 10 minutos."
-    },
-    {
-      "name": "9 Attitudes of Mindfulness by Jon Kabat Zinn",
-      "classes": ["English", "Jon_Kabat_Zinn", "Tips", "Long", "Daily_Life"],
-      "link": "2n7FOBFMvXg",
-      "duration": "26.27",
-      "description": "some description comes later"
-    },
-    {
-      "name": "Pleine conscience de la douceur et du bonheur par Christophe André",
-      "classes": ["French", "Christophe_André", "Meditation", "Medium", "Happiness"],
-      "link": "wKu2Fi4l4Sk",
-      "duration": "15.23",
-      "description": "some description comes later"
-    },
-    {
-      "name": "Être et rester zen",
-      "classes": ["French", "Christophe_André", "Tips", "Long", "Daily_Life"],
-      "link": "3r1--xjiucc",
-      "duration": "34.02",
-      "description": "Savoir être calme et serein face aux adversités de la vie… nous en rêvons tous, mais ce n`est pas toujours facile de rester zen au quotidien ! Dans ce tuto, Christophe ANDRE explique ce que veut dire «être zen» et présente 4 outils pour mieux gérer son stress: un travail sur les pensées inspiré de la philosophie stoïcienne, la méditation de pleine conscience, la psychologie positive et comment changer son regard sur la vie."
-    },
-    {
-      "name": "How to Embrace your Own Awareness || Jon Kabat-Zinn Meditation",
-      "classes": ["English", "Jon_Kabat_Zinn", "Meditation", "Long", "Mindfulness"],
-      "link": "JQgkGBdt89A",
-      "duration": "22.05",
-      "description": "some description comes later"
-    },
-    {
-      "name": "Jon Kabat-Zinn Q & A: Working with Mental Anxiety",
-      "classes": ["English", "Jon_Kabat_Zinn", "Tips", "Long", "Thoughts"],
-      "link": "oAVhMg5bHHA",
-      "duration": "18.55",
-      "description": "This session is from a series of livestreams with Jon Kabat-Zinn as a part of “Mitigation Retreat” in 2020 brought to you by Jon and Wisdom 2.0. All the Q & A`s and full sessions are available on your Youtube page."
-    },
-    {
-      "name": "15 MIN GUIDED MINDFULNESS MEDITATION - JON KABAT ZINN",
-      "classes": ["English", "Jon_Kabat_Zinn", "Meditation", "Medium", "Mindfulness"],
-      "link": "p6q9KFv0xF0",
-      "duration": "14.52",
-      "description": "This is a 15min guided meditation from Dr Jon Kabat Zinn. You will be practicing mindfulness during this mindfulness meditation. Mindfulness is critical to good time management. Enjoy this meditation with Jon Kabat Zinn."
-    },
-    {
-      "name": "Meditación en 5 minutos",
-      "classes": ["Spanish", "Other_Authors", "Meditation", "Short", "Reset"],
-      "link": "sgJCs2B12YE",
-      "duration": "5.27",
-      "description": "Disfruta esta sesión de meditación en 5 minutos, ¡creada especialmente para vosotros! Aprende cómo experimentar paz y reducir el estrés. No necesitas mucho tiempo, solo 5 minutos."
-    },
-    {
-      "name": "The Four Constituents of Well-Being",
-      "classes": ["English", "Richard_J.Davidson", "Tips", "Medium", "Daily_Life"],
-      "link": "HeBpsiFQiTI",
-      "duration": "13.36",
-      "description": "Richard Davidson, founder of the Center for Healthy Minds at the University of Wisconsin-Madison, explains the four constituents of well-being. These constituents are rooted in specific brain circuits that exhibit neuroplasticity, which gives us the opportunity to enhance our well-being with practice. Filmed at Mindfulness & Well-Being at Work (November 2015)."
-    },
-    {
-      "name": "4 conseils pour en finir avec le stress",
-      "classes": ["French", "Christophe_André", "Tips", "Short", "Daily_Life"],
-      "link": "REDa0JX3cY4",
-      "duration": "3.18",
-      "description": "Le psychiatre Christophe André raconte comment retrouver sa liberté intérieure.🙏"
+      "name":"Christophe André",
+      "bio":"Christophe André, né le 12 juin 1956 à Montpellier, est un psychiatre et psychothérapeute français. Christophe André est l`un des chefs de file des thérapies comportementales et cognitives en France, et a été l`un des premiers à y introduire l`usage de la méditation de pleine conscience en psychothérapie.",
+      "wiki":"https://fr.wikipedia.org/wiki/Christophe_Andr%C3%A9"
     }
   ]
 }
