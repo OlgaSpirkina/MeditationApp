@@ -110,7 +110,7 @@ class Carousel{
     this.moveCallbacks.push(cb);
   }
   onWindowResize(){
-    let mobile = window.innerWidth < 800;
+    let mobile = window.innerWidth < 801;
     if(mobile !== this.isMobile){
       this.isMobile = mobile;
       this.setStyle();
@@ -168,7 +168,7 @@ async function fetchAuthorsBio(){
         bioSection = document.getElementsByClassName('bio')[0], // section to display bio
         cards = document.querySelectorAll('.cards'); // all the img of authors
 // elements will be presented differently in small or large screen
-  const mql = window.matchMedia('(max-width: 800px)');
+  const mql = window.matchMedia('(max-width: 801px)');
   let mobileWindow = mql.matches;
 // create DOM Elements (p: where the biography will be displayed when large screen) &  (icon)
   let bioParagrapheElem = document.createElement('p');

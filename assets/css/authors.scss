@@ -75,14 +75,10 @@ figcaption{
   color: var(--mainReddish);
   text-shadow: 1px 1px 2px var(--navbarGrey);
   border-radius: 50%;
-  top: 65%;
+  top: 50%;
   right: 10px;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s;
-}
-.carousel__next:hover,
-.carousel__prev:hover{
-  transform: scale(1.1);
 }
 .carousel__prev{
   right: auto;
@@ -135,19 +131,19 @@ figcaption{
 .show-text{
   display: block;
 }
-@media all and (max-width: 499px){
+@media all and (max-width: 360px){
   .carousel__next,
   .carousel__prev{
     top: 75%;
   }
 }
-@media all and (min-width: 500px) and (max-width: 550px){
+@media all and (min-width: 361px) and (max-width: 499px){
   .carousel__next,
   .carousel__prev{
-    top: 70%;
+    top: 60%;
   }
 }
-@media all and (min-width: 551px) and (max-width: 799px){
+@media all and (min-width: 500px) and (max-width: 799px){
   .carousel__next,
   .carousel__prev{
     top: 70%;
@@ -180,7 +176,7 @@ figcaption{
 @media all and (min-width: 800px) and (max-width: 1200px){
   .carousel__next,
   .carousel__prev{
-    top: 40%;
+    top: 28%;
   }
 }
 @media all and (max-width: 1000px){
@@ -224,18 +220,6 @@ figcaption{
   .cards{
     width: 100%;
     margin: 0;
-  }
-}
-@media all and (min-width: 1201px) and (max-width: 1460px){
-  .carousel__next,
-  .carousel__prev{
-    top: 50%;
-  }
-}
-@media all and (min-width: 1461px){
-  .carousel__next,
-  .carousel__prev{
-    top: 55%;
   }
 }
 /* ----------- iPad ----------- */
