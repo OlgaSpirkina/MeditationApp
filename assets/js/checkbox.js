@@ -253,7 +253,7 @@ const disableAllVideos = (word) => {
   hiddenText.innerHTML = `Choose at least ${word}`;
   if(mobile){
     if(window.innerWidth > window.innerHeight){
-      document.getElementById('hiddenDiv').style.height = "650px";
+      document.getElementById('hiddenDiv').style.height = "620px";
     }
     if(window.innerWidth < window.innerHeight){
       document.getElementById('hiddenDiv').style.height = "1600px";
@@ -285,13 +285,9 @@ function show(maxVideosPerPage) {
 
 window.addEventListener('orientationchange', function() {
   if (window.matchMedia("(orientation: portrait)").matches) {
-
-      document.getElementById('hiddenDiv').style.height = "650px";
-
+    document.getElementById('hiddenDiv').style.height = "620px";
   }
   if (window.matchMedia("(orientation: landscape)").matches) {
-
-      document.getElementById('hiddenDiv').style.height = "1600px";
-    
+    document.getElementById('hiddenDiv').style.height = "1600px";
   }
 })
