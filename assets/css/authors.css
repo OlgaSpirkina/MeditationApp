@@ -150,7 +150,7 @@ figcaption a {
 @media all and (max-width: 360px) {
   .carousel__next,
 .carousel__prev {
-    top: 75%;
+    top: 100%;
   }
 }
 @media all and (min-width: 361px) and (max-width: 499px) {
