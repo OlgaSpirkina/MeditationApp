@@ -129,7 +129,7 @@ const displayModal = (link, name, description) => {
   document.getElementById('youtubeModalLabel').innerHTML = name;
   document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
   document.getElementById('modalPlayer').title = name;
-  document.getElementById('youtubeModalDescription').innerHTML = description;
+  description !== null ? (document.getElementById('youtubeModalDescription').innerHTML = description) : null;
 }
 // Fetching data
 async function fetchVideos(){
@@ -150,12 +150,3 @@ async function fetchVideos(){
 fetchVideos().catch(error => {
   error.message;
 });
-// In Mobile if orientation is changed the page is reloaded
-/*
-if (window.DeviceOrientationEvent) {
-  window.addEventListener('orientationchange', function() {
-    alert(`🌷 Please note that the page will be reloaded when you change the orientation of your device`);
-    location.reload();
-  }, false);
-}
-*/

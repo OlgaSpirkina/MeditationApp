@@ -4,14 +4,14 @@
     "classes": ["French", "Christophe_André", "Meditation", "Medium", "Thoughts"],
     "link": "bXKKhOadDu8",
     "duration": "11.42",
-    "description": "some description comes later"
+    "description": null
   },
   {
     "name": "Les personnalités toxiques - La chronique de Christophe André",
     "classes": ["French", "Christophe_André", "Tips", "Short", "Daily_Life"],
     "link": "AeCi-oFVdPs",
     "duration": "4.24",
-    "description": "some description comes later"
+    "description": null
   },
   {
     "name": "MEDITACIÓN GUIADA PROFUNDA - 30 minutos con cuencos tibetanos voz femenina en castellano",
@@ -60,7 +60,7 @@
     "classes": ["English", "Jon_Kabat_Zinn", "Meditation", "Medium", "Mindfulness"],
     "link": "2GjZanuXWWk",
     "duration": "10.02",
-    "description": "some description comes later"
+    "description": null
   },
   {
     "name": "Meditación en Español en 10 Minutos",
@@ -74,14 +74,14 @@
     "classes": ["English", "Jon_Kabat_Zinn", "Tips", "Long", "Daily_Life"],
     "link": "2n7FOBFMvXg",
     "duration": "26.27",
-    "description": "some description comes later"
+    "description": null
   },
   {
     "name": "Pleine conscience de la douceur et du bonheur par Christophe André",
     "classes": ["French", "Christophe_André", "Meditation", "Medium", "Happiness"],
     "link": "wKu2Fi4l4Sk",
     "duration": "15.23",
-    "description": "some description comes later"
+    "description": null
   },
   {
     "name": "Être et rester zen",
@@ -95,7 +95,7 @@
     "classes": ["English", "Jon_Kabat_Zinn", "Meditation", "Long", "Mindfulness"],
     "link": "JQgkGBdt89A",
     "duration": "22.05",
-    "description": "some description comes later"
+    "description": null
   },
   {
     "name": "Jon Kabat-Zinn Q & A: Working with Mental Anxiety",
