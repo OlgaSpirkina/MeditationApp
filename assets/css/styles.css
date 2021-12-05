@@ -94,6 +94,11 @@ body {
 
 /* End Navbar */
 /* Presentation */
+.presentation {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .presentation p {
   font-size: 1rem;
   line-height: normal;
@@ -249,6 +254,13 @@ fieldset .allLang, fieldset .allCat, fieldset .allAuth, fieldset .anyDur, fields
 }
 
 @media all and (max-width: 535px) {
+  .presentation {
+    width: 100%;
+  }
+  .presentation p {
+    font-size: 0.9rem;
+  }
+
   .navbar .toggle-button {
     display: block;
   }

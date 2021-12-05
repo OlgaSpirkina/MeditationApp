@@ -231,6 +231,12 @@ fieldset{
 
 }
 @media all and (max-width: 535px){
+  .presentation{
+    width: 100%;
+    p{
+      font-size: .9rem;
+    }
+  }
   .navbar .toggle-button{
     display: block;
   }
