@@ -129,7 +129,7 @@ const displayModal = (link, name, description) => {
   document.getElementById('youtubeModalLabel').innerHTML = name;
   document.getElementById('modalPlayer').src = `https://www.youtube.com/embed/${link}`;
   document.getElementById('modalPlayer').title = name;
-  description !== null ? (document.getElementById('youtubeModalDescription').innerHTML = description) : null;
+  description !== 'null' ? (document.getElementById('youtubeModalDescription').innerHTML = description) : (document.getElementById('youtubeModalDescription').innerHTML = '');
 }
 // Fetching data
 async function fetchVideos(){
