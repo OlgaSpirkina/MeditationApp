@@ -59,7 +59,7 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
       `
         <span class="d-flex justify-content-start align-items-center ${allSmthClass}">
             <input id="${allSmthClass}" type="checkbox" name="${title}" rel="${title}" class="mx-1" checked></input>
-            <label id="${allSmthClass}Label" for="${title}">Unselect ${title}</label>
+            <label id="${allSmthClass}Label" for="${allSmthClass}">Unselect ${title}</label>
         </span>
       `)
       :
@@ -67,7 +67,7 @@ const typeOfContentFilter = (wrapper, someData, commonClass, index, allSmth, all
       `
         <span class="d-flex justify-content-start align-items-center">
             <input type="checkbox" id="${title}" name="${title}" rel="${title}" class="mx-1" checked></input>
-            <label for="${title}">${title.replace(/_/g, ' ')}</label>
+            <label for="${allSmthClass}">${title.replace(/_/g, ' ')}</label>
         </span>
       `);
     return html;
